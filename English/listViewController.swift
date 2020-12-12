@@ -8,8 +8,10 @@
 import UIKit
 import RealmSwift
 
-class listViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class listViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     @IBOutlet weak var englishList: UITableView!
+  
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // Realmインスタンスを取得する
         let realm = try! Realm()
@@ -18,11 +20,35 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         // 日付の近い順でソート：昇順
         // 以降内容をアップデートするとリスト内は自動的に更新される。
         var listArray = try! Realm().objects(List.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
+   
+    var defoWordArray = ["follow",
+                          "consider",
+                          "increase",
+                          "expect",
+                          "decide",
+                          "develop",
+                          "provide",
+                          "continue",
+                          "include"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         englishList.delegate = self
         englishList.dataSource = self
+        
+        //cellの高さ
+        englishList.rowHeight = 80
+        
+        //デリゲート先を自分に設定する。
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.enablesReturnKeyAutomatically = true
+        
+        //何も入力されていなくてもReturnキーを押せるようにする。
+        searchBar.enablesReturnKeyAutomatically = false
+        
+        
         
        
     }
@@ -30,7 +56,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listArray.count  // ←修正する
+        return listArray.count
     }
     
     // 各セルの内容を返すメソッド
@@ -40,14 +66,19 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         
         // Cellに値を設定する.  --- ここから ---
         let list = listArray[indexPath.row]
-        cell.textLabel?.text = list.title
+       
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        
-        let dateString:String = formatter.string(from: list.date)
-        cell.detailTextLabel?.text = dateString
-        // --- ここまで追加 ---
+    //cellのlableにタグをつけて表示する
+    //wordLableは英単語のこと
+    //meaningは英単語の意味
+    let wordLable = cell.viewWithTag(1) as! UILabel
+    wordLable.text = list.word
+  
+    
+    let meaningLable = cell.viewWithTag(2) as! UILabel
+    meaningLable.text = list.contents
+    
+    
         
         return cell
     }
@@ -101,13 +132,13 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         guard let searchText = searchBar.text else {return}
         
         //条件として、検索文字がカテゴリーと一致するものを検索すること
-        let result = realm.objects(List.self).filter("category BEGINSWITH '\(searchText)'")
+        let result = realm.objects(List.self).filter("word BEGINSWITH '\(searchText)'")
         //検索結果の件数を取得する。
         let count = result.count
         
         //検索結果が０の場合その言葉を含んだ結果が出る。
         if (count == 0){
-            listArray = realm.objects(List.self).filter("category CONTAINS '\(searchText)'")
+            listArray = realm.objects(List.self).filter("word CONTAINS '\(searchText)'")
         }else {
             listArray = result
         }
@@ -119,15 +150,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         englishList.reloadData()
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
     
     // segue で画面遷移する時に呼ばれる
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
