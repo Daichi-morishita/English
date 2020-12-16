@@ -48,9 +48,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         //何も入力されていなくてもReturnキーを押せるようにする。
         searchBar.enablesReturnKeyAutomatically = false
         
-        
-        
-       
+      
     }
     
     
