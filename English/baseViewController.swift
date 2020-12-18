@@ -7,28 +7,37 @@
 
 import UIKit
 
+//単語と意味をまとめるための関数
+class  WordMeaning{
+    let word: String
+    let meaning: String
+    
+    init(word: String, meaning: String) {
+        self.word = word
+        self.meaning = meaning
+    }
+    
+}
+
 class baseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var baseTableView: UITableView!
     
-    var baseArray1: [String] = ["follow",
-                                "consider",
-                                "increase",
-                                "expect",
-                                "decide",
-                                "develop",
-                                "provide",
-                                "continue",
-                                "include",]
-    
-    var baseArray2: [String] = ["続く/従う",
-                                "考慮する",
-                                "増える",
-                                "予期する",
-                                "決意する/決定する",
-                                "発達する",
-                                "供給する/与える",
-                                "続ける",
-                                "含む"]
+  
+    //単語と意味をまとめている。
+    //sectionが設定でき、増やすためには下で設定できる
+    let wordmeaning:[[WordMeaning]] = [
+        [.init(word: "follow", meaning: "続く/従う"),
+         .init(word: "consider", meaning: "考慮する"),
+         .init(word: "increase", meaning: "増える") ],
+        
+        [.init(word: "follow", meaning: "続く/従う"),
+         .init(word: "consider", meaning: "考慮する"),
+         .init(word: "increase", meaning: "増える") ],
+        
+        [.init(word: "follow", meaning: "続く/従う"),
+         .init(word: "consider", meaning: "考慮する"),
+         .init(word: "increase", meaning: "増える") ],
+    ]
     
     
     
@@ -43,7 +52,9 @@ class baseViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return baseArray1.count
+        
+        //ここでしっかりと多次元配列の中身を表示できるようにする。
+        return wordmeaning[section].count
     }
     
     // 各セルの内容を返すメソッド
@@ -56,12 +67,13 @@ class baseViewController: UIViewController, UITableViewDelegate, UITableViewData
         //cellのlableにタグをつけて表示する
         //wordLableは英単語のこと
         //meaningは英単語の意味
+        //arrayの中から単語と意味が一緒に出てくるようになっている
         let base1 = cell.viewWithTag(1) as! UILabel
-        base1.text = String(describing: baseArray1[indexPath.row])
+        base1.text = wordmeaning[indexPath.section][indexPath.row].word
         
         
         let base2 = cell.viewWithTag(2) as! UILabel
-        base2.text = String(describing: baseArray2[indexPath.row])
+        base2.text = wordmeaning[indexPath.section][indexPath.row].meaning
         
         
         
@@ -74,6 +86,35 @@ class baseViewController: UIViewController, UITableViewDelegate, UITableViewData
                      heightForRowAt indexPath: IndexPath) -> CGFloat {
           return 120.0
       }
+    //section設定
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return wordmeaning.count
+    }
+    //sectionのテキスト表示の設定
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "level1"
+        label.textAlignment = .center
+        label.backgroundColor = .green
+        
+        //sectionの数とタイトルを設定できる
+        switch section {
+        case 0:
+            label.text = "level1"
+        case 1:
+            label.text = "level2"
+        case 2:
+            label.text = "level3"
+        default:
+            break
+        }
+        
+        return label
+    }
+    //sectionの高さの設定
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
     
     
 }

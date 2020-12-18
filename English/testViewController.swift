@@ -20,7 +20,7 @@ class testViewController: UIViewController {
                                 "develop",
                                 "provide",
                                 "continue",
-                                "include",]
+                                "include"]
     
     var baseArray2: [String] = ["続く/従う",
                                 "考慮する",
