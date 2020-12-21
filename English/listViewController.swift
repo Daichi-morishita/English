@@ -16,10 +16,12 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Realmインスタンスを取得する
         let realm = try! Realm()
 
-        // DB内のタスクが格納されるリスト。
-        // 日付の近い順でソート：昇順
-        // 以降内容をアップデートするとリスト内は自動的に更新される。
-        var listArray = try! Realm().objects(List.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
+    // DB内のタスクが格納されるリスト。
+    // 日付の近い順でソート：昇順
+    // 以降内容をアップデートするとリスト内は自動的に更新される。
+    //内容を英単語のアルファベット順に変更
+    
+        var listArray = try! Realm().objects(List.self).sorted(byKeyPath: "word", ascending: true)  // ←追加
    
     var defoWordArray = ["follow",
                           "consider",
