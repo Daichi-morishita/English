@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E0B640A907236B4F0E05A8A9 /* Pods_English.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E10F24FC90195D36A305213 /* Pods_English.framework */; };
+		E56F0A992590F4F10019EB18 /* selectedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */; };
 		E572778B25846350007BB85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572778A25846350007BB85D /* AppDelegate.swift */; };
 		E572778D25846350007BB85D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572778C25846350007BB85D /* SceneDelegate.swift */; };
 		E572779225846350007BB85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E572779025846350007BB85D /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		2C993F0CD2FE41DA51F60B66 /* Pods-English.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-English.release.xcconfig"; path = "Target Support Files/Pods-English/Pods-English.release.xcconfig"; sourceTree = "<group>"; };
 		2E10F24FC90195D36A305213 /* Pods_English.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_English.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DAEA799A6129C419D92075 /* Pods-English.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-English.debug.xcconfig"; path = "Target Support Files/Pods-English/Pods-English.debug.xcconfig"; sourceTree = "<group>"; };
+		E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedTestViewController.swift; sourceTree = "<group>"; };
 		E572778725846350007BB85D /* English.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = English.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E572778A25846350007BB85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E572778C25846350007BB85D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E56F0A9B2590F4FA0019EB18 /* 辞書 */ = {
+			isa = PBXGroup;
+			children = (
+				E59A86372585C4FA0041318A /* baseViewController.swift */,
+			);
+			path = "辞書";
+			sourceTree = "<group>";
+		};
+		E56F0A9C2590F52C0019EB18 /* 自分リスト */ = {
+			isa = PBXGroup;
+			children = (
+				E572779F25846440007BB85D /* listViewController.swift */,
+				E59A86272584B5E90041318A /* List.swift */,
+			);
+			path = "自分リスト";
+			sourceTree = "<group>";
+		};
+		E56F0A9D2590F5540019EB18 /* テスト */ = {
+			isa = PBXGroup;
+			children = (
+				E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */,
+				E5B42C9F2588E41000E1CA05 /* testViewController.swift */,
+			);
+			path = "テスト";
+			sourceTree = "<group>";
+		};
 		E572777E25846350007BB85D = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				E572779025846350007BB85D /* Main.storyboard */,
-				E59A86372585C4FA0041318A /* baseViewController.swift */,
-				E572779F25846440007BB85D /* listViewController.swift */,
-				E5B42C9F2588E41000E1CA05 /* testViewController.swift */,
-				E59A86272584B5E90041318A /* List.swift */,
-				E57277B12584728B007BB85D /* InputViewController.swift */,
+				E56F0A9B2590F4FA0019EB18 /* 辞書 */,
+				E56F0A9C2590F52C0019EB18 /* 自分リスト */,
+				E56F0A9D2590F5540019EB18 /* テスト */,
 				E572778A25846350007BB85D /* AppDelegate.swift */,
+				E57277B12584728B007BB85D /* InputViewController.swift */,
 				E572778C25846350007BB85D /* SceneDelegate.swift */,
 				E572779325846358007BB85D /* Assets.xcassets */,
 				E572779525846358007BB85D /* LaunchScreen.storyboard */,
@@ -223,6 +250,7 @@
 				E572778B25846350007BB85D /* AppDelegate.swift in Sources */,
 				E57277A025846440007BB85D /* listViewController.swift in Sources */,
 				E59A86282584B5E90041318A /* List.swift in Sources */,
+				E56F0A992590F4F10019EB18 /* selectedTestViewController.swift in Sources */,
 				E572778D25846350007BB85D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
