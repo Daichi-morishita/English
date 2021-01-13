@@ -14,90 +14,51 @@ class testViewController: UIViewController {
     @IBOutlet weak var testLabel: UILabel!
     
     var passedId = Int()
+    var baseTest = [""]
+    var baseTestMeanig = [""]
+    var Test = ["":""]
     
+    var baseArray1: [String] = [ "abandon","abolish","absorb","accelerate"]
     
-    var baseArray1: [String] = ["follow",
-                                "consider",
-                                "increase",
-                                "expect",
-                                "decide",
-                                "develop",
-                                "provide",
-                                "continue",
-                                "include"]
+    var baseArray2: [String] = ["捨てる","廃止する","吸収する","促進する"]
     
-    var baseArray2: [String] = ["続く/従う",
-                                "考慮する",
-                                "増える",
-                                "予期する",
-                                "決意する/決定する",
-                                "発達する",
-                                "供給する/与える",
-                                "続ける",
-                                "含む"]
+    var baseArray3: [String] = ["abuse","access","accord","acquaintance"]
     
-    var baseArray3: [String] = ["apple",
-                                "consider",
-                                "increase",
-                                "expect",
-                                "decide",
-                                "develop",
-                                "provide",
-                                "continue",
-                                "include"]
+    var baseArray4: [String] = ["虐待","利用する権利","一致/合意","知人"]
     
-    var baseArray4: [String] = ["りんご/従う",
-                                "考慮する",
-                                "増える",
-                                "予期する",
-                                "決意する/決定する",
-                                "発達する",
-                                "供給する/与える",
-                                "続ける",
-                                "含む"]
+    var baseArray5: [String] = ["（not）necessarily","abruptly","absolutely","abstract"]
     
-    var baseArray5: [String] = ["best",
-                                "consider",
-                                "increase",
-                                "expect",
-                                "decide",
-                                "develop",
-                                "provide",
-                                "continue",
-                                "include"]
+    var baseArray6: [String] = ["必ずしも〜でない","不意に","絶対に","抽象的な"]
     
-    var baseArray6: [String] = ["続く/最善",
-                                "考慮する",
-                                "増える",
-                                "予期する",
-                                "決意する/決定する",
-                                "発達する",
-                                "供給する/与える",
-                                "続ける",
-                                "含む"]
+    var Array1 = ["abandon":"捨てる","abolish":"廃止する", "absorb:": "吸収する","accelerate":"促進する" ]
     
-    
+  
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        testView.isUserInteractionEnabled = true
-
-        testWord.text = baseArray1[index]
-        testMeaning.text = baseArray2[index]
-        testMeaning.isHidden  = true
-        
         testLabel.text = "\(passedId)"
         
         if passedId == 0 {
-            testWord.text = baseArray1[index]
+            baseTest = baseArray1
+            baseTestMeanig = baseArray2
         }else if passedId == 1{
-            testWord.text = baseArray3[index]
+            baseTest = baseArray3
+            baseTestMeanig = baseArray4
         }else if passedId == 2{
-            testWord.text = baseArray5[index]
+            baseTest = baseArray5
+            baseTestMeanig = baseArray6
         }
         
+        
+        
+        testView.isUserInteractionEnabled = true
+
+        testWord.text = baseTest[index]
+        testMeaning.text = baseTestMeanig[index]
+        testMeaning.isHidden  = true
+        
+       
         
         
         
@@ -120,16 +81,21 @@ class testViewController: UIViewController {
     }
     
     var index = 0
+    @IBAction func randomButton(_ sender: Any) {
+        let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
+        testWord.text = baseTest[randomInt]
+        testMeaning.text = baseTestMeanig[randomInt]
+    }
     
     //ボタン系
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
         index += 1
-        if index >= baseArray1.count{
+        if index >= baseTest.count{
             index = 0
         }
-        testWord.text = baseArray1[index]
-        testMeaning.text = baseArray2[index]
+        testWord.text = baseTest[index]
+        testMeaning.text = baseTestMeanig[index]
         if testMeaning.isHidden == false{
             testMeaning.isHidden = true
         }
@@ -139,10 +105,10 @@ class testViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         index -= 1
         if index < 0{
-            index = 2
+            index = baseTest.count
         }
-        testWord.text = baseArray1[index]
-        testMeaning.text = baseArray2[index]
+        testWord.text = baseTest[index]
+        testMeaning.text = baseTestMeanig[index]
         if testMeaning.isHidden == false{
             testMeaning.isHidden = true
         }
@@ -155,6 +121,8 @@ class testViewController: UIViewController {
         }
     }
     
+  
+    
     
     //スワイプした時に起こる事象
     @objc func Swipe(sender: UISwipeGestureRecognizer){
@@ -162,21 +130,21 @@ class testViewController: UIViewController {
         switch sender.direction {
         case .right:
             index += 1
-            if index >= baseArray1.count{
+            if index >= baseTest.count{
                 index = 0
             }
-            testWord.text = baseArray1[index]
-            testMeaning.text = baseArray2[index]
+            testWord.text = baseTest[index]
+            testMeaning.text = baseTestMeanig[index]
             if testMeaning.isHidden == false{
                 testMeaning.isHidden = true
             }
         case .left:
             index -= 1
             if index < 0{
-                index = 2
+                index = baseTest.count
             }
-            testWord.text = baseArray1[index]
-            testMeaning.text = baseArray2[index]
+            testWord.text = baseTest[index]
+            testMeaning.text = baseTestMeanig[index]
             if testMeaning.isHidden == false{
                 testMeaning.isHidden = true
             }

@@ -23,15 +23,15 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     
         var listArray = try! Realm().objects(List.self).sorted(byKeyPath: "word", ascending: true)  // ←追加
    
-    var defoWordArray = ["follow",
-                          "consider",
-                          "increase",
-                          "expect",
-                          "decide",
-                          "develop",
-                          "provide",
-                          "continue",
-                          "include"]
+//    var defoWordArray = ["follow",
+//                          "consider",
+//                          "increase",
+//                          "expect",
+//                          "decide",
+//                          "develop",
+//                          "provide",
+//                          "continue",
+//                          "include"]
     
     
     override func viewDidLoad() {
