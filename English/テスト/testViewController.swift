@@ -12,11 +12,12 @@ class testViewController: UIViewController {
     @IBOutlet weak var testMeaning: UILabel!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var testLabel: UILabel!
+   
     
     var passedId = Int()
-    var baseTest = [""]
-    var baseTestMeanig = [""]
-    var Test = ["":""]
+    var baseTest:[String] = []
+    var baseTestMeanig:[String] = []
+    
     
     var baseArray1: [String] = [ "abandon","abolish","absorb","accelerate"]
     
@@ -32,64 +33,92 @@ class testViewController: UIViewController {
     
     var Array1 = ["abandon":"捨てる","abolish":"廃止する", "absorb:": "吸収する","accelerate":"促進する" ]
     
-  
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         testLabel.text = "\(passedId)"
         
-        if passedId == 0 {
+        switch passedId {
+        case 0 :
             baseTest = baseArray1
             baseTestMeanig = baseArray2
-        }else if passedId == 1{
+        case 1 :
             baseTest = baseArray3
             baseTestMeanig = baseArray4
-        }else if passedId == 2{
+        case 2 :
             baseTest = baseArray5
             baseTestMeanig = baseArray6
+        default:
+            break
         }
-        
-        
-        
-        testView.isUserInteractionEnabled = true
-
-        testWord.text = baseTest[index]
-        testMeaning.text = baseTestMeanig[index]
-        testMeaning.isHidden  = true
         
        
         
         
+        testView.isUserInteractionEnabled = true
+        
+        testWord.text = baseTest[index]
+        testMeaning.text = baseTestMeanig[index]
+        testMeaning.isHidden  = true
+        
+        
+        
+        
         
         //スワイプアクションの設定 labelではなくViewが動作に反応するようになっている。
-            
-            let Swiperight = UISwipeGestureRecognizer()
-            let Swipeleft = UISwipeGestureRecognizer()
-            
-            //このジェスチャレコグナイザのスワイプの許可された方向
-            Swiperight.direction = .right
-            Swipeleft.direction = .left
-            
-            //スワイプアクションができるように取得する。
-            self.testView.addGestureRecognizer(Swiperight)
-            self.testView.addGestureRecognizer(Swipeleft)
-            
-            Swiperight.addTarget(self, action: #selector(Swipe(sender:)))
-            Swipeleft.addTarget(self, action: #selector(Swipe(sender:)))
-     
+        
+        let Swiperight = UISwipeGestureRecognizer()
+        let Swipeleft = UISwipeGestureRecognizer()
+        
+        //このジェスチャレコグナイザのスワイプの許可された方向
+        Swiperight.direction = .right
+        Swipeleft.direction = .left
+        
+        //スワイプアクションができるように取得する。
+        self.testView.addGestureRecognizer(Swiperight)
+        self.testView.addGestureRecognizer(Swipeleft)
+        
+        Swiperight.addTarget(self, action: #selector(Swipe(sender:)))
+        Swipeleft.addTarget(self, action: #selector(Swipe(sender:)))
+        
     }
     
+//    // 画面に表示される直前に呼ばれます。
+//    // viewDidLoadとは異なり毎回呼び出されます。
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        if passedId == 0 {
+//            baseTest = baseArray1
+//            baseTestMeanig = baseArray2
+//        }else if passedId == 1{
+//            baseTest = baseArray3
+//            baseTestMeanig = baseArray4
+//        }else if passedId == 2{
+//            baseTest = baseArray5
+//            baseTestMeanig = baseArray6
+//        }
+//    }
+    
+    
     var index = 0
+    
     @IBAction func randomButton(_ sender: Any) {
+        
+       
         let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
         testWord.text = baseTest[randomInt]
         testMeaning.text = baseTestMeanig[randomInt]
     }
     
+  
+    
+    
+    
     //ボタン系
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
+       
         index += 1
         if index >= baseTest.count{
             index = 0
@@ -99,13 +128,27 @@ class testViewController: UIViewController {
         if testMeaning.isHidden == false{
             testMeaning.isHidden = true
         }
+       
+            let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
+            testWord.text = baseTest[randomInt]
+            testMeaning.text = baseTestMeanig[randomInt]
+        
     }
     
     @IBOutlet weak var backButton: UIButton!
     @IBAction func backButton(_ sender: Any) {
         index -= 1
         if index < 0{
-            index = baseTest.count
+            if passedId == 0 {
+                index = baseArray1.count
+                testWord.text = baseArray1[index]
+            }else if passedId == 1{
+                index = baseArray3.count
+                testWord.text = baseArray3[index]
+            }else if passedId == 2{
+                index = baseArray5.count
+                testWord.text = baseArray5[index]
+            }
         }
         testWord.text = baseTest[index]
         testMeaning.text = baseTestMeanig[index]
@@ -121,7 +164,7 @@ class testViewController: UIViewController {
         }
     }
     
-  
+    
     
     
     //スワイプした時に起こる事象
@@ -141,7 +184,16 @@ class testViewController: UIViewController {
         case .left:
             index -= 1
             if index < 0{
-                index = baseTest.count
+                if passedId == 0 {
+                    index = baseArray1.count
+                    
+                }else if passedId == 1{
+                    index = baseArray3.count
+                    
+                }else if passedId == 2{
+                    index = baseArray5.count
+                    
+                }
             }
             testWord.text = baseTest[index]
             testMeaning.text = baseTestMeanig[index]
@@ -154,5 +206,5 @@ class testViewController: UIViewController {
         }
     }//ここまでが起こるアクション
     
-
+    
 }
