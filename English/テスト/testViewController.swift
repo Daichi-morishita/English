@@ -11,63 +11,59 @@ class testViewController: UIViewController {
     @IBOutlet weak var testWord: UILabel!
     @IBOutlet weak var testMeaning: UILabel!
     @IBOutlet weak var testView: UIView!
-    @IBOutlet weak var testLabel: UILabel!
-   
-    
+//    @IBOutlet weak var testLabel: UILabel! //前のtableviewの列確認用
+    @IBOutlet weak var switchLabel: UILabel!
+    @IBOutlet weak var answerButtun: UIButton!
+
+    var randomOnOff = false
     var passedId = Int()
     var baseTest:[String] = []
     var baseTestMeanig:[String] = []
+    var index = 0
+
     
+    var koukouDoushi1: [String] = [ "abandon","abolish","absorb","accelerate","ban","base",
+                                    "beg","belong","calculate","capture","carve","cast"]
+    var koukouDoushi2: [String] = ["捨てる","廃止する","吸収する","促進する","禁止する","基づいている",
+                                   "乞う","所属する","計算する","捕らえる","彫る","投げる/＜目を＞向ける"]
     
-    var baseArray1: [String] = [ "abandon","abolish","absorb","accelerate"]
+    var koukouMeishi1: [String] = ["abuse","access","accord","acquaintance"]
+    var koukouMeishi2: [String] = ["虐待","利用する権利","一致/合意","知人"]
     
-    var baseArray2: [String] = ["捨てる","廃止する","吸収する","促進する"]
+    var koukouKeiyoushi1: [String] = ["（not）necessarily","abruptly","absolutely","abstract"]
+    var koukouKeiyoushi2: [String] = ["必ずしも〜でない","不意に","絶対に","抽象的な"]
     
-    var baseArray3: [String] = ["abuse","access","accord","acquaintance"]
-    
-    var baseArray4: [String] = ["虐待","利用する権利","一致/合意","知人"]
-    
-    var baseArray5: [String] = ["（not）necessarily","abruptly","absolutely","abstract"]
-    
-    var baseArray6: [String] = ["必ずしも〜でない","不意に","絶対に","抽象的な"]
-    
-    var Array1 = ["abandon":"捨てる","abolish":"廃止する", "absorb:": "吸収する","accelerate":"促進する" ]
+//    var Array1 = ["abandon":"捨てる","abolish":"廃止する", "absorb:": "吸収する","accelerate":"促進する" ]
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = "\(passedId)"
+//        testLabel.text = "\(passedId)"　//前のテーブルビューの選択された行の確認用
         
+        //選択された行によっての条件分岐
         switch passedId {
         case 0 :
-            baseTest = baseArray1
-            baseTestMeanig = baseArray2
+            baseTest = koukouDoushi1
+            baseTestMeanig = koukouDoushi2
         case 1 :
-            baseTest = baseArray3
-            baseTestMeanig = baseArray4
+            baseTest = koukouMeishi1
+            baseTestMeanig = koukouMeishi2
         case 2 :
-            baseTest = baseArray5
-            baseTestMeanig = baseArray6
+            baseTest = koukouKeiyoushi1
+            baseTestMeanig = koukouKeiyoushi2
         default:
             break
         }
-        
-       
-        
-        
-        testView.isUserInteractionEnabled = true
-        
         testWord.text = baseTest[index]
         testMeaning.text = baseTestMeanig[index]
         testMeaning.isHidden  = true
         
-        
-        
+      
+        switchLabel.text = "ランダムOFF"//ランダムスイッチのonoffラベル
         
         
         //スワイプアクションの設定 labelではなくViewが動作に反応するようになっている。
-        
         let Swiperight = UISwipeGestureRecognizer()
         let Swipeleft = UISwipeGestureRecognizer()
         
@@ -82,80 +78,15 @@ class testViewController: UIViewController {
         Swiperight.addTarget(self, action: #selector(Swipe(sender:)))
         Swipeleft.addTarget(self, action: #selector(Swipe(sender:)))
         
-    }
-    
-//    // 画面に表示される直前に呼ばれます。
-//    // viewDidLoadとは異なり毎回呼び出されます。
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        if passedId == 0 {
-//            baseTest = baseArray1
-//            baseTestMeanig = baseArray2
-//        }else if passedId == 1{
-//            baseTest = baseArray3
-//            baseTestMeanig = baseArray4
-//        }else if passedId == 2{
-//            baseTest = baseArray5
-//            baseTestMeanig = baseArray6
-//        }
-//    }
-    
-    
-    var index = 0
-    
-    @IBAction func randomButton(_ sender: Any) {
         
-       
-        let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
-        testWord.text = baseTest[randomInt]
-        testMeaning.text = baseTestMeanig[randomInt]
-    }
-    
-  
-    
-    
-    
-    //ボタン系
-    @IBOutlet weak var nextButton: UIButton!
-    @IBAction func nextButton(_ sender: Any) {
-       
-        index += 1
-        if index >= baseTest.count{
-            index = 0
-        }
-        testWord.text = baseTest[index]
-        testMeaning.text = baseTestMeanig[index]
-        if testMeaning.isHidden == false{
-            testMeaning.isHidden = true
-        }
-       
-            let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
-            testWord.text = baseTest[randomInt]
-            testMeaning.text = baseTestMeanig[randomInt]
+        testView.isUserInteractionEnabled = true
         
+        // ボタンの丸み
+        answerButtun.layer.cornerRadius = 20.0
+
     }
-    
-    @IBOutlet weak var backButton: UIButton!
-    @IBAction func backButton(_ sender: Any) {
-        index -= 1
-        if index < 0{
-            if passedId == 0 {
-                index = baseArray1.count
-                testWord.text = baseArray1[index]
-            }else if passedId == 1{
-                index = baseArray3.count
-                testWord.text = baseArray3[index]
-            }else if passedId == 2{
-                index = baseArray5.count
-                testWord.text = baseArray5[index]
-            }
-        }
-        testWord.text = baseTest[index]
-        testMeaning.text = baseTestMeanig[index]
-        if testMeaning.isHidden == false{
-            testMeaning.isHidden = true
-        }
-    }
+ 
+    //日本語訳の設定
     @IBAction func answerButtun(_ sender: Any) {
         if testMeaning.isHidden == true{
             testMeaning.isHidden = false
@@ -164,37 +95,53 @@ class testViewController: UIViewController {
         }
     }
     
-    
+    // ランダムのonoff状態設定
+    @IBAction func randomSwich(_ sender: Any) {
+        if randomOnOff == false {
+            randomOnOff = true
+            switchLabel.text = "ランダムON"
+        }else{
+            randomOnOff = false
+            switchLabel.text = "ランダムOFF"
+        }
+    }
     
     
     //スワイプした時に起こる事象
     @objc func Swipe(sender: UISwipeGestureRecognizer){
         
         switch sender.direction {
-        case .right:
+        
+        case .left:
+            if randomOnOff == false{
             index += 1
             if index >= baseTest.count{
                 index = 0
             }
+            //  array.indices（インデックスの配列）とcontains（配列に含まれるか）を利用する
+            //　indexの範囲外を修正できるコード
+            guard baseTest.indices.contains(index) else { return }
+            
             testWord.text = baseTest[index]
             testMeaning.text = baseTestMeanig[index]
+            }else{
+                let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
+                testWord.text = baseTest[randomInt]
+                testMeaning.text = baseTestMeanig[randomInt]
+            }
             if testMeaning.isHidden == false{
                 testMeaning.isHidden = true
             }
-        case .left:
+        case .right:
             index -= 1
-            if index < 0{
-                if passedId == 0 {
-                    index = baseArray1.count
-                    
-                }else if passedId == 1{
-                    index = baseArray3.count
-                    
-                }else if passedId == 2{
-                    index = baseArray5.count
-                    
-                }
+            
+                    if index <= 0{
+                        index = baseTest.count
             }
+            //  array.indices（インデックスの配列）とcontains（配列に含まれるか）を利用する
+            //　indexの範囲外を修正できるコード
+            guard baseTest.indices.contains(index) else { return }
+
             testWord.text = baseTest[index]
             testMeaning.text = baseTestMeanig[index]
             if testMeaning.isHidden == false{
@@ -202,9 +149,62 @@ class testViewController: UIViewController {
             }
             
         default:
-            index += 0
+            break
         }
     }//ここまでが起こるアクション
     
     
+}
+
+//　MARK:　- 各種ボタンの動作確認
+extension testViewController{
+//    @IBAction func randomButton(_ sender: Any) {
+//        let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
+//        testWord.text = baseTest[randomInt]
+//        testMeaning.text = baseTestMeanig[randomInt]
+//        if testMeaning.isHidden == false{
+//            testMeaning.isHidden = true
+//        }
+//    }
+//
+//    //ボタン系　スワイプアクションの動作確認用
+//    @IBOutlet weak var nextButton: UIButton!
+//    @IBAction func nextButton(_ sender: Any) {
+//        index += 1
+//        if index >= baseTest.count{
+//            index = 0
+//        }
+//        //  array.indices（インデックスの配列）とcontains（配列に含まれるか）を利用する
+//        //　indexの範囲外を修正できるコード
+//        guard baseTest.indices.contains(index) else { return }
+//
+//        testWord.text = baseTest[index]
+//        testMeaning.text = baseTestMeanig[index]
+//        if testMeaning.isHidden == false{
+//            testMeaning.isHidden = true
+//        }
+//
+//        let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
+//        testWord.text = baseTest[randomInt]
+//        testMeaning.text = baseTestMeanig[randomInt]
+//
+//    }
+//    @IBOutlet weak var backButton: UIButton!
+//    @IBAction func backButton(_ sender: Any) {
+//
+//        index -= 1
+//
+//                if index <= 0{
+//            index = baseTest.count
+//        }
+//        //  array.indices（インデックスの配列）とcontains（配列に含まれるか）を利用する
+//        //　indexの範囲外を修正できるコード
+//        guard baseTest.indices.contains(index) else { return }
+//
+//        testWord.text = baseTest[index]
+//        testMeaning.text = baseTestMeanig[index]
+//        if testMeaning.isHidden == false{
+//            testMeaning.isHidden = true
+//        }
+//    }
 }

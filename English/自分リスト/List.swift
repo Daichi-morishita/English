@@ -10,9 +10,9 @@ import RealmSwift
 class List: Object {
     // 管理用 ID。プライマリーキー
     @objc dynamic var id = 0
-    
-    // タイトル
-    @objc dynamic var title = ""
+
+//    // タイトル
+//    @objc dynamic var title = ""
     
     //単語
     @objc dynamic var word = ""
@@ -20,11 +20,11 @@ class List: Object {
     // 意味
     @objc dynamic var contents = ""
     
-    // 日時
-    @objc dynamic var date = Date()
-    
-    //カテゴリ
-    @objc dynamic var category = ""
+//    // 日時
+//    @objc dynamic var date = Date()
+//
+//    //カテゴリ
+//    @objc dynamic var category = ""
     
     
     // id をプライマリーキーとして設定

@@ -12,7 +12,7 @@ class selectedTestViewController: UIViewController, UITableViewDelegate, UITable
     
     var indexNum = 0
     
-    let selectedLevel = ["動詞", "名詞", "形容詞"]
+    let selectedLevel = ["高校英語　動詞", "高校英語　名詞", "高校英語　形容詞"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

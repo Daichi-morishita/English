@@ -10,28 +10,22 @@ import RealmSwift
 
 class listViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     @IBOutlet weak var englishList: UITableView!
-  
     @IBOutlet weak var searchBar: UISearchBar!
     
     // Realmインスタンスを取得する
-        let realm = try! Realm()
-
+    let realm = try! Realm()
+    var list: List!
+    
+    var addBool: Bool!
+    var receiveWord1: String = ""
+    var receiveMeaning1: String = ""
+    
     // DB内のタスクが格納されるリスト。
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     //内容を英単語のアルファベット順に変更
+    var listArray = try! Realm().objects(List.self).sorted(byKeyPath: "word", ascending: true)  // ←追加
     
-        var listArray = try! Realm().objects(List.self).sorted(byKeyPath: "word", ascending: true)  // ←追加
-   
-//    var defoWordArray = ["follow",
-//                          "consider",
-//                          "increase",
-//                          "expect",
-//                          "decide",
-//                          "develop",
-//                          "provide",
-//                          "continue",
-//                          "include"]
     
     
     override func viewDidLoad() {
@@ -50,7 +44,26 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         //何も入力されていなくてもReturnキーを押せるようにする。
         searchBar.enablesReturnKeyAutomatically = false
         
+        if addBool == true{
+//            let list = List()
+//            
+//            let allLists = realm.objects(List.self).sorted(byKeyPath: "id", ascending: true)
+//            if allLists.count != 0 {
+//                list.id = allLists.max(ofProperty: "id")! + 1
+//            }
+
+            try! realm.write {
+                self.list.word = self.receiveWord1
+                self.list.contents = self.receiveMeaning1
+              
+                self.realm.add(self.list, update: .modified)
+            }
+            
+        }
       
+        
+        englishList.reloadData()
+        
     }
     
     
@@ -60,25 +73,23 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // 各セルの内容を返すメソッド
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 再利用可能な cell を得る
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         // Cellに値を設定する.  --- ここから ---
         let list = listArray[indexPath.row]
-       
         
-    //cellのlableにタグをつけて表示する
-    //wordLableは英単語のこと
-    //meaningは英単語の意味
-    let wordLable = cell.viewWithTag(1) as! UILabel
-    wordLable.text = list.word
-  
-    
-    let meaningLable = cell.viewWithTag(2) as! UILabel
-    meaningLable.text = list.contents
-    
-    
+        
+        //cellのlableにタグをつけて表示する
+        //wordLableは英単語のこと
+        //meaningは英単語の意味
+        let wordLable = cell.viewWithTag(1) as! UILabel
+        wordLable.text = list.word
+        
+        
+        let meaningLable = cell.viewWithTag(2) as! UILabel
+        meaningLable.text = list.contents
         
         return cell
     }
@@ -149,6 +160,16 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         //テーブルを再読み込みする。
         englishList.reloadData()
     }
+    // 検索バー編集開始時にキャンセルボタン有効化
+       func searchBarTextDidBeginEditing(_ searchBar: UISearchBar){
+           searchBar.setShowsCancelButton(true, animated: true)
+       }
+
+       // キャンセルボタンでキャセルボタン非表示
+       func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+           searchBar.resignFirstResponder()
+           searchBar.setShowsCancelButton(false, animated: true)
+       }
     
     
     
@@ -176,5 +197,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         super.viewWillAppear(animated)
         englishList.reloadData()
     }
+    
+ 
     
 }

@@ -12,9 +12,9 @@ import UserNotifications
 
 class InputViewController: UIViewController {
     @IBOutlet weak var wordTextView: UITextView!
-   
     @IBOutlet weak var contentsTextView: UITextView!
    
+
     
     let realm = try! Realm()
     var list: List!
@@ -30,15 +30,22 @@ class InputViewController: UIViewController {
         wordTextView.text = list.word
         contentsTextView.text = list.contents
         
-        if wordTextView.text == "" {
-            wordTextView.text = "単語を入力してください"
-        }
+          
+//        wordTextView.text = receiveWord
+//        contentsTextView.text = receiveMeaning
+//        
+//        if wordTextView.text == "" {
+//            wordTextView.text = "単語を入力してください"
+//        }
       
       
     }
   
     
     override func viewWillDisappear(_ animated: Bool) {
+        if wordTextView.text == ""{
+            wordTextView.text = "no ward"
+        }
         try! realm.write {
             self.list.word = self.wordTextView.text
             self.list.contents = self.contentsTextView.text
