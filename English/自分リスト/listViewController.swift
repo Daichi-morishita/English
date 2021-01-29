@@ -118,6 +118,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func categoryButton(_ sender: Any) {
+        //catagoryの並び順は、名前順か登録順で変わる。
         //アラート生成
         //UIAlertControllerのスタイルがactionSheet
         let actionSheet = UIAlertController(title: "category", message: "", preferredStyle: UIAlertController.Style.actionSheet)
@@ -126,14 +127,14 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         let action1 = UIAlertAction(title: "動詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = self.realm.objects(List.self).filter("category BEGINSWITH '動詞'")
+            self.listArray = self.listArray.filter("category BEGINSWITH '動詞'")
             self.englishList.reloadData()
         })
         // 表示させたいタイトル2ボタンが押された時の処理をクロージャ実装する
         let action2 = UIAlertAction(title: "名詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = self.realm.objects(List.self).filter("category BEGINSWITH '名詞'")
+            self.listArray = self.listArray.filter("category BEGINSWITH '名詞'")
             self.englishList.reloadData()
         })
         
@@ -141,7 +142,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         let action3 = UIAlertAction(title: "形容詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = self.realm.objects(List.self).filter("category BEGINSWITH '形容詞'")
+            self.listArray = self.listArray.filter("category BEGINSWITH '形容詞'")
             self.englishList.reloadData()
         })
         
@@ -149,7 +150,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         let action4 = UIAlertAction(title: "その他", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = self.realm.objects(List.self).filter("category BEGINSWITH 'else'")
+            self.listArray = self.listArray.filter("category BEGINSWITH 'else'")
             self.englishList.reloadData()
 
         })

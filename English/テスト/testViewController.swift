@@ -142,7 +142,7 @@ class testViewController: UIViewController {
             testWord.text = baseTest[index]
             testMeaning.text = baseTestMeanig[index]
             }else{
-                let randomInt = Int.random(in: 1..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
+                let randomInt = Int.random(in: 0..<baseTest.count)  // 1から4の範囲で整数（Int型）乱数を生成
                 testWord.text = baseTest[randomInt]
                 testMeaning.text = baseTestMeanig[randomInt]
             }

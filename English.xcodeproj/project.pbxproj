@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E44B3018046177EC5E6B7D70 /* Pods_English.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE1D406D1DFDC99ED85A73F /* Pods_English.framework */; };
 		E50FA71B25BEA32300B57935 /* toMyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FA71A25BEA32300B57935 /* toMyListViewController.swift */; };
+		E52E988A25C3DFED0001234A /* MyLIstTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */; };
 		E56F0A992590F4F10019EB18 /* selectedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */; };
 		E56F0ACD25964B080019EB18 /* toTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0ACC25964B080019EB18 /* toTestViewController.swift */; };
 		E56F0AD12596FF640019EB18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0AD02596FF640019EB18 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		29547FA04D8A035CDCF2FD51 /* Pods-English.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-English.debug.xcconfig"; path = "Target Support Files/Pods-English/Pods-English.debug.xcconfig"; sourceTree = "<group>"; };
 		2CE1D406D1DFDC99ED85A73F /* Pods_English.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_English.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50FA71A25BEA32300B57935 /* toMyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toMyListViewController.swift; sourceTree = "<group>"; };
+		E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLIstTestViewController.swift; sourceTree = "<group>"; };
 		E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedTestViewController.swift; sourceTree = "<group>"; };
 		E56F0ACC25964B080019EB18 /* toTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toTestViewController.swift; sourceTree = "<group>"; };
 		E56F0AD02596FF640019EB18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */,
 				E5B42C9F2588E41000E1CA05 /* testViewController.swift */,
+				E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */,
 			);
 			path = "テスト";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				E56F0A992590F4F10019EB18 /* selectedTestViewController.swift in Sources */,
 				E572778D25846350007BB85D /* SceneDelegate.swift in Sources */,
 				E56F0ACD25964B080019EB18 /* toTestViewController.swift in Sources */,
+				E52E988A25C3DFED0001234A /* MyLIstTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

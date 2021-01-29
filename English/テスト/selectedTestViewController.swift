@@ -12,7 +12,7 @@ class selectedTestViewController: UIViewController, UITableViewDelegate, UITable
     
     var indexNum = 0
     
-    let selectedLevel = ["高校英語　動詞", "高校英語　名詞", "高校英語　形容詞"]
+    let selectedLevel = ["高校英語　動詞", "高校英語　名詞", "高校英語　形容詞","自分リストのテスト"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,13 @@ class selectedTestViewController: UIViewController, UITableViewDelegate, UITable
             tableView.deselectRow(at: indexPath, animated: true)
         //index の番号を取得
         indexNum =  indexPath.row//一番上で宣言している。
+        switch indexNum{
+        //自分リストのテスト用の画面に移動する
+        case 3:
+            performSegue(withIdentifier: "myListTestSegue",sender: nil) //
+        default:
         performSegue(withIdentifier: "toTestSegue",sender: nil) // ←追加する
+    }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
