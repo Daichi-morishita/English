@@ -54,6 +54,8 @@ class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
        // セルが選択された時に呼ばれる
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // セルの選択を解除
+               tableView.deselectRow(at: indexPath, animated: true)
            // 選択されたcellの番号を記憶
            chosenCell = indexPath.row
            // 画面遷移の準備
@@ -69,15 +71,5 @@ class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
        }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

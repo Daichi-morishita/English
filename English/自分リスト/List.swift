@@ -20,11 +20,11 @@ class List: Object {
     // 意味
     @objc dynamic var contents = ""
     
-//    // 日時
-//    @objc dynamic var date = Date()
-//
-//    //カテゴリ
-//    @objc dynamic var category = ""
+    // 日時
+    @objc dynamic var date = Date()
+
+    //カテゴリ
+    @objc dynamic var category = ""
     
     
     // id をプライマリーキーとして設定

@@ -6,15 +6,22 @@
 //
 
 import UIKit
+import RealmSwift
 
 class testViewController: UIViewController {
     @IBOutlet weak var testWord: UILabel!
     @IBOutlet weak var testMeaning: UILabel!
     @IBOutlet weak var testView: UIView!
+    var testCategory: String!
 //    @IBOutlet weak var testLabel: UILabel! //前のtableviewの列確認用
     @IBOutlet weak var switchLabel: UILabel!
     @IBOutlet weak var answerButtun: UIButton!
+    @IBOutlet weak var randomSwich1: UISwitch!
+    
 
+    let realm = try! Realm()
+    var list: List!
+    
     var randomOnOff = false
     var passedId = Int()
     var baseTest:[String] = []
@@ -33,7 +40,6 @@ class testViewController: UIViewController {
     var koukouKeiyoushi1: [String] = ["（not）necessarily","abruptly","absolutely","abstract"]
     var koukouKeiyoushi2: [String] = ["必ずしも〜でない","不意に","絶対に","抽象的な"]
     
-//    var Array1 = ["abandon":"捨てる","abolish":"廃止する", "absorb:": "吸収する","accelerate":"促進する" ]
     
     
     
@@ -61,7 +67,7 @@ class testViewController: UIViewController {
         
       
         switchLabel.text = "ランダムOFF"//ランダムスイッチのonoffラベル
-        
+        randomSwich1.isOn = false
         
         //スワイプアクションの設定 labelではなくViewが動作に反応するようになっている。
         let Swiperight = UISwipeGestureRecognizer()
@@ -105,6 +111,17 @@ class testViewController: UIViewController {
             switchLabel.text = "ランダムOFF"
         }
     }
+    
+    @IBAction func randomSwich1(_ sender: UISwitch) {
+        if sender.isOn == true {
+            randomOnOff = true
+            switchLabel.text = "ランダムON"
+        }else{
+            randomOnOff = false
+            switchLabel.text = "ランダムOFF"
+        }
+    }
+    
     
     
     //スワイプした時に起こる事象
@@ -153,7 +170,44 @@ class testViewController: UIViewController {
         }
     }//ここまでが起こるアクション
     
+    @IBAction func addFromButton(_ sender: Any) {
+        print(testWord.text!)
+    }
     
+    
+    // segue で画面遷移する時に呼ばれる
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let listView:listViewController = segue.destination as! listViewController
+        if segue.identifier == "addFromTest" {
+            let list = List()
+
+            let allLists = realm.objects(List.self).sorted(byKeyPath: "id", ascending: true)
+            if allLists.count != 0 {
+                list.id = allLists.max(ofProperty: "id")! + 1
+            }
+            
+            listView.list = list
+        }
+        
+        let addList = segue.destination as! listViewController
+        addList.receivedFromTestWord = testWord.text!
+        addList.receivedFromTestMeaning = testMeaning.text!
+        switch passedId {
+        case 0:
+            testCategory = "動詞"
+            addList.receiveFromTestCategory = testCategory
+        case 1:
+            testCategory = "名詞"
+            addList.receiveFromTestCategory = testCategory
+        case 2:
+            testCategory = "形容詞、副詞"
+            addList.receiveFromTestCategory = testCategory
+        default:
+            testCategory = "else"
+            addList.receiveFromTestCategory = testCategory
+        }
+        addList.addTestBool = true
+    }
 }
 
 //　MARK:　- 各種ボタンの動作確認
