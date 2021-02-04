@@ -32,7 +32,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     //内容を英単語のアルファベット順に変更
-    var listArray = try! Realm().objects(List.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
+    var listArray = try! Realm().objects(List.self).sorted(byKeyPath: "date", ascending: false)  // ←追加
     
     
     
@@ -57,11 +57,11 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
             try! realm.write {
                 self.list.word = self.receiveWord1
                 self.list.contents = self.receiveMeaning1
-                //カテゴリーは選択がなければ、elseになる
+                //カテゴリーは選択がなければ、その他になる
                 if receiveCategory1 != ""{
                     self.list.category = self.receiveCategory1
                 }else{
-                    receiveCategory1 = "else"
+                    receiveCategory1 = "その他"
                     self.list.category = self.receiveCategory1}
                 self.realm.add(self.list, update: .modified)
             }
@@ -87,14 +87,14 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         let actionSheet = UIAlertController(title: "並び替え", message: "", preferredStyle: UIAlertController.Style.actionSheet)
         
         // 表示させたいタイトル1ボタンが押された時の処理をクロージャ実装する
-        let action1 = UIAlertAction(title: "登録順", style: UIAlertAction.Style.default, handler: {
+        let action1 = UIAlertAction(title: "追加順", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = try! Realm().objects(List.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
+            self.listArray = try! Realm().objects(List.self).sorted(byKeyPath: "date", ascending: false)  // ←追加
             self.englishList.reloadData()
         })
         // 表示させたいタイトル2ボタンが押された時の処理をクロージャ実装する
-        let action2 = UIAlertAction(title: "名前順", style: UIAlertAction.Style.default, handler: {
+        let action2 = UIAlertAction(title: "ABC順", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
             self.listArray = try! Realm().objects(List.self).sorted(byKeyPath: "word", ascending: true)  // ←追加
@@ -121,20 +121,20 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         //catagoryの並び順は、名前順か登録順で変わる。
         //アラート生成
         //UIAlertControllerのスタイルがactionSheet
-        let actionSheet = UIAlertController(title: "category", message: "", preferredStyle: UIAlertController.Style.actionSheet)
+        let actionSheet = UIAlertController(title: "カテゴリー", message: "", preferredStyle: UIAlertController.Style.actionSheet)
         
         // 表示させたいタイトル1ボタンが押された時の処理をクロージャ実装する
         let action1 = UIAlertAction(title: "動詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = self.listArray.filter("category BEGINSWITH '動詞'")
+            self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH '動詞'")
             self.englishList.reloadData()
         })
         // 表示させたいタイトル2ボタンが押された時の処理をクロージャ実装する
         let action2 = UIAlertAction(title: "名詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = self.listArray.filter("category BEGINSWITH '名詞'")
+            self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH '名詞'")
             self.englishList.reloadData()
         })
         
@@ -142,7 +142,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         let action3 = UIAlertAction(title: "形容詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = self.listArray.filter("category BEGINSWITH '形容詞'")
+            self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH '形容詞'")
             self.englishList.reloadData()
         })
         
@@ -150,7 +150,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         let action4 = UIAlertAction(title: "その他", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
-            self.listArray = self.listArray.filter("category BEGINSWITH 'else'")
+            self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH 'その他'")
             self.englishList.reloadData()
 
         })
@@ -198,10 +198,13 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         //meaningは英単語の意味
         let wordLable = cell.viewWithTag(1) as! UILabel
         wordLable.text = list.word
-        
+        wordLable.lineBreakMode = .byCharWrapping//意味ラベルの改行の種類
+        wordLable.numberOfLines = 3//改行の行数
         
         let meaningLable = cell.viewWithTag(2) as! UILabel
         meaningLable.text = list.contents
+        meaningLable.lineBreakMode = .byCharWrapping//意味ラベルの改行の種類
+        meaningLable.numberOfLines = 3//改行の行数
         
         return cell
     }
@@ -210,6 +213,11 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "cellSegue",sender: nil) // ←追加する
         
+    }
+    // Cell の高さを１００にする
+    func tableView(_ table: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
     }
     
     

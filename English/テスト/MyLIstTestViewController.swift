@@ -13,6 +13,8 @@ class MyLIstTestViewController: UIViewController {
     @IBOutlet weak var myTestMeaning: UILabel!
     @IBOutlet weak var myTestVeiw: UIView!
     @IBOutlet weak var switchLabel: UILabel!
+    @IBOutlet weak var randomSwich: UISwitch!
+    @IBOutlet weak var answerButtun: UIButton!
     
     let realm = try! Realm()
     var list: List!
@@ -30,6 +32,7 @@ class MyLIstTestViewController: UIViewController {
         
       
         switchLabel.text = "ランダムOFF"//ランダムスイッチのonoffラベル
+        randomSwich.isOn = false
         
         //スワイプアクションの設定 labelではなくViewが動作に反応するようになっている。
         let Swiperight = UISwipeGestureRecognizer()
@@ -48,6 +51,8 @@ class MyLIstTestViewController: UIViewController {
         
         
         myTestVeiw.isUserInteractionEnabled = true
+        myTestVeiw.layer.cornerRadius = 10.0
+        answerButtun.layer.cornerRadius = 30.0
     }
     
     
@@ -58,9 +63,10 @@ class MyLIstTestViewController: UIViewController {
             myTestMeaning.isHidden = true
         }
     }
+  
     
-    @IBAction func myTestRandom(_ sender: Any) {
-        if randomOnOff == false {
+    @IBAction func randomSwich(_ sender: UISwitch) {
+        if sender.isOn == true {
             randomOnOff = true
             switchLabel.text = "ランダムON"
         }else{
@@ -68,13 +74,13 @@ class MyLIstTestViewController: UIViewController {
             switchLabel.text = "ランダムOFF"
         }
     }
-    
     //スワイプした時に起こる事象
     @objc func Swipe(sender: UISwipeGestureRecognizer){
         
         switch sender.direction {
         
         case .left:
+            
             if randomOnOff == false{
                 testCount += 1
             if testCount >= myTestArray.count{

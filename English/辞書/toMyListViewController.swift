@@ -20,14 +20,14 @@ class toMyListViewController: UIViewController {
     let realm = try! Realm()
     var list: List!
     
-    let categoryList = ["動詞","名詞","形容詞、副詞","else"]
+    let categoryList = ["動詞","名詞","形容詞、副詞","その他"]
     
     
     var receiveWord: String = ""
     var receiveMeaning: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
         // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
@@ -49,6 +49,8 @@ class toMyListViewController: UIViewController {
                // インプットビュー設定
         addCategoryText.inputView = addCategoryPicker
         addCategoryText.inputAccessoryView = toolbar
+        
+        addMeaningText.layer.cornerRadius = 5.0
     }
    
    

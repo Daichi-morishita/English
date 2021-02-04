@@ -20,7 +20,7 @@ class InputViewController: UIViewController {
     let realm = try! Realm()
     var list: List!
    
-    let categoryList = ["動詞","名詞","形容詞、副詞","else"]
+    let categoryList = ["動詞","名詞","形容詞、副詞","その他"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +48,12 @@ class InputViewController: UIViewController {
                // インプットビュー設定
         categoryTextField.inputView = categoryPicker
         categoryTextField.inputAccessoryView = toolbar
+        
+        wordTextView.layer.cornerRadius = 5.0
+        contentsTextView.layer.cornerRadius = 5.0
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
    
   
@@ -100,5 +106,24 @@ extension InputViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         categoryTextField.text = "\(categoryList[categoryPicker.selectedRow(inComponent: 0)])"
         
        }
+    
+    //キーボードが出てくるときにviewが上がる
+    @objc func keyboardWillShow(notification: NSNotification) {
+            if !contentsTextView.isFirstResponder {
+                return
+            }
+        
+            if self.view.frame.origin.y == 0 {
+                if let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                    self.view.frame.origin.y -= keyboardRect.height
+                }
+            }
+        }
+        
+        @objc func keyboardWillHide(notification: NSNotification) {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
 }
 

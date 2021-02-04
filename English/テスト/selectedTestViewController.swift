@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class selectedTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var selectedTestList: UITableView!
     
+    let realm = try! Realm()
     var indexNum = 0
     
-    let selectedLevel = ["高校英語　動詞", "高校英語　名詞", "高校英語　形容詞","自分リストのテスト"]
-    
+    let selectedLevel = ["高校英語　動詞テスト", "高校英語　名詞テスト", "高校英語　形容詞テスト","自分リストのテスト"]
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,7 @@ class selectedTestViewController: UIViewController, UITableViewDelegate, UITable
         selectedTestList.delegate =  self
         
         //タイトル設定
-        navigationItem.title = "スライドテスト"
+        navigationItem.title = ""
         
     }
     
@@ -54,7 +56,13 @@ class selectedTestViewController: UIViewController, UITableViewDelegate, UITable
         switch indexNum{
         //自分リストのテスト用の画面に移動する
         case 3:
-            performSegue(withIdentifier: "myListTestSegue",sender: nil) //
+            let idCount =  realm.objects(List.self).sorted(byKeyPath: "id", ascending: true) 
+            if idCount.count > 0{
+                performSegue(withIdentifier: "myListTestSegue",sender: nil)
+            }else{
+                print("自分リストなし")
+                break
+            }
         default:
         performSegue(withIdentifier: "toTestSegue",sender: nil) // ←追加する
     }

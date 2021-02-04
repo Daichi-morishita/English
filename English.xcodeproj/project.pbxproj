@@ -24,6 +24,7 @@
 		E59A86282584B5E90041318A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A86272584B5E90041318A /* List.swift */; };
 		E59A86382585C4FA0041318A /* baseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A86372585C4FA0041318A /* baseViewController.swift */; };
 		E5B42CA02588E41000E1CA05 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B42C9F2588E41000E1CA05 /* testViewController.swift */; };
+		E5BF5F6A25CA92A600C1192F /* base2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF5F6925CA92A600C1192F /* base2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E59A86272584B5E90041318A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		E59A86372585C4FA0041318A /* baseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseViewController.swift; sourceTree = "<group>"; };
 		E5B42C9F2588E41000E1CA05 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		E5BF5F6925CA92A600C1192F /* base2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = base2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				E57C7BD825B7FA3500AEB222 /* oneViewController.swift */,
 				E59A86372585C4FA0041318A /* baseViewController.swift */,
+				E5BF5F6925CA92A600C1192F /* base2ViewController.swift */,
 				E50FA71A25BEA32300B57935 /* toMyListViewController.swift */,
 				E56F0ACC25964B080019EB18 /* toTestViewController.swift */,
 			);
@@ -265,6 +268,7 @@
 				E5B42CA02588E41000E1CA05 /* testViewController.swift in Sources */,
 				E572778B25846350007BB85D /* AppDelegate.swift in Sources */,
 				E57C7BD925B7FA3500AEB222 /* oneViewController.swift in Sources */,
+				E5BF5F6A25CA92A600C1192F /* base2ViewController.swift in Sources */,
 				E57277A025846440007BB85D /* listViewController.swift in Sources */,
 				E50FA71B25BEA32300B57935 /* toMyListViewController.swift in Sources */,
 				E59A86282584B5E90041318A /* List.swift in Sources */,
@@ -432,7 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.daichi.morishita.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -455,7 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.daichi.morishita.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

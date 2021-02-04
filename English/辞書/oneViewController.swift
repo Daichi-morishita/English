@@ -10,18 +10,21 @@ import UIKit
 class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var oneTableView: UITableView!
     
-    let selectedOne = ["高校生英語"]
+    let selectedOne = ["高校英単語"]
     
     // 選択されたセルを覚える変数
     var chosenCell: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "選択してください"
+        self.navigationItem.title = "英単語帳を選択"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
 
 
         oneTableView.delegate = self
         oneTableView.dataSource = self
+        
+        
         
     }
     
@@ -37,12 +40,14 @@ class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
        // 各セルの要素を指定
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
            // UITableViewCellのインスタンスを生成
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_01", for: indexPath)
         
            // セルのUILabelに配列の中身を順に表示
            cell.textLabel?.text = selectedOne[indexPath.row]
-
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
+        //文字の位置の設定
            return cell
        }
     
