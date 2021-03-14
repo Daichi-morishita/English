@@ -27,6 +27,16 @@ class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+        let ud = UserDefaults.standard
+               let firstLunchKey = "firstLunch"
+               if ud.bool(forKey: firstLunchKey) {
+                   ud.set(false, forKey: firstLunchKey)
+                   ud.synchronize()
+                   self.performSegue(withIdentifier: "toStart", sender: nil)
+               }
+    }
     
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
@@ -69,10 +79,12 @@ class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
        // Segue 準備
        override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if segue.identifier == "tobaseViewController"{
            // 遷移先のViecControllerのインスタンスを生成
            let secVC: baseViewController = (segue.destination as? baseViewController)!
            // secondViewControllerのgetCellに選択された画像を設定する
            secVC.getCell = chosenCell
+        }
 
        }
     

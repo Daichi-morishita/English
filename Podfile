@@ -8,6 +8,11 @@ target 'English' do
   # Pods for English
   pod 'RealmSwift','5.1.0'
 
+# add the Firebase pod for Google Analytics
+pod 'Firebase/Analytics'
+# add pods for any other desired Firebase products
+# https://firebase.google.com/docs/ios/setup#available-pods
+
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
@@ -15,6 +20,8 @@ post_install do |installer|
     end
   end
 end
+
+
 
 
 end

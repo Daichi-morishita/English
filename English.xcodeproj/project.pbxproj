@@ -11,7 +11,6 @@
 		E50FA71B25BEA32300B57935 /* toMyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FA71A25BEA32300B57935 /* toMyListViewController.swift */; };
 		E52E988A25C3DFED0001234A /* MyLIstTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */; };
 		E56F0A992590F4F10019EB18 /* selectedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */; };
-		E56F0ACD25964B080019EB18 /* toTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0ACC25964B080019EB18 /* toTestViewController.swift */; };
 		E56F0AD12596FF640019EB18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0AD02596FF640019EB18 /* ViewController.swift */; };
 		E572778B25846350007BB85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572778A25846350007BB85D /* AppDelegate.swift */; };
 		E572778D25846350007BB85D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572778C25846350007BB85D /* SceneDelegate.swift */; };
@@ -21,10 +20,12 @@
 		E57277A025846440007BB85D /* listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572779F25846440007BB85D /* listViewController.swift */; };
 		E57277B22584728B007BB85D /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57277B12584728B007BB85D /* InputViewController.swift */; };
 		E57C7BD925B7FA3500AEB222 /* oneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C7BD825B7FA3500AEB222 /* oneViewController.swift */; };
+		E584CD2725D401B30074A8F1 /* koukoudoushi.CSV in Resources */ = {isa = PBXBuildFile; fileRef = E584CD2625D401B30074A8F1 /* koukoudoushi.CSV */; };
+		E584CD3B25D7FFD60074A8F1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E584CD3A25D7FFD60074A8F1 /* StartViewController.swift */; };
 		E59A86282584B5E90041318A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A86272584B5E90041318A /* List.swift */; };
 		E59A86382585C4FA0041318A /* baseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A86372585C4FA0041318A /* baseViewController.swift */; };
 		E5B42CA02588E41000E1CA05 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B42C9F2588E41000E1CA05 /* testViewController.swift */; };
-		E5BF5F6A25CA92A600C1192F /* base2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF5F6925CA92A600C1192F /* base2ViewController.swift */; };
+		E5BF5FA625CDB00500C1192F /* GoogleService-Info (4).plist in Resources */ = {isa = PBXBuildFile; fileRef = E5BF5FA525CDB00500C1192F /* GoogleService-Info (4).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,6 @@
 		E50FA71A25BEA32300B57935 /* toMyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toMyListViewController.swift; sourceTree = "<group>"; };
 		E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLIstTestViewController.swift; sourceTree = "<group>"; };
 		E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedTestViewController.swift; sourceTree = "<group>"; };
-		E56F0ACC25964B080019EB18 /* toTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toTestViewController.swift; sourceTree = "<group>"; };
 		E56F0AD02596FF640019EB18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E572778725846350007BB85D /* English.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = English.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E572778A25846350007BB85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,10 +46,12 @@
 		E572779F25846440007BB85D /* listViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listViewController.swift; sourceTree = "<group>"; };
 		E57277B12584728B007BB85D /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		E57C7BD825B7FA3500AEB222 /* oneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneViewController.swift; sourceTree = "<group>"; };
+		E584CD2625D401B30074A8F1 /* koukoudoushi.CSV */ = {isa = PBXFileReference; lastKnownFileType = text; path = koukoudoushi.CSV; sourceTree = "<group>"; };
+		E584CD3A25D7FFD60074A8F1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		E59A86272584B5E90041318A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		E59A86372585C4FA0041318A /* baseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseViewController.swift; sourceTree = "<group>"; };
 		E5B42C9F2588E41000E1CA05 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
-		E5BF5F6925CA92A600C1192F /* base2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = base2ViewController.swift; sourceTree = "<group>"; };
+		E5BF5FA525CDB00500C1192F /* GoogleService-Info (4).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (4).plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +71,7 @@
 			children = (
 				E57C7BD825B7FA3500AEB222 /* oneViewController.swift */,
 				E59A86372585C4FA0041318A /* baseViewController.swift */,
-				E5BF5F6925CA92A600C1192F /* base2ViewController.swift */,
 				E50FA71A25BEA32300B57935 /* toMyListViewController.swift */,
-				E56F0ACC25964B080019EB18 /* toTestViewController.swift */,
 			);
 			path = "辞書";
 			sourceTree = "<group>";
@@ -118,17 +118,28 @@
 			isa = PBXGroup;
 			children = (
 				E572779025846350007BB85D /* Main.storyboard */,
+				E584CD3A25D7FFD60074A8F1 /* StartViewController.swift */,
 				E56F0AD02596FF640019EB18 /* ViewController.swift */,
 				E56F0A9B2590F4FA0019EB18 /* 辞書 */,
 				E56F0A9D2590F5540019EB18 /* テスト */,
 				E56F0A9C2590F52C0019EB18 /* 自分リスト */,
 				E572778A25846350007BB85D /* AppDelegate.swift */,
+				E584CD2B25D401C10074A8F1 /* csvファイル */,
 				E572778C25846350007BB85D /* SceneDelegate.swift */,
 				E572779325846358007BB85D /* Assets.xcassets */,
 				E572779525846358007BB85D /* LaunchScreen.storyboard */,
 				E572779825846358007BB85D /* Info.plist */,
+				E5BF5FA525CDB00500C1192F /* GoogleService-Info (4).plist */,
 			);
 			path = English;
+			sourceTree = "<group>";
+		};
+		E584CD2B25D401C10074A8F1 /* csvファイル */ = {
+			isa = PBXGroup;
+			children = (
+				E584CD2625D401B30074A8F1 /* koukoudoushi.CSV */,
+			);
+			path = "csvファイル";
 			sourceTree = "<group>";
 		};
 		F782A30A95B1374D6666669D /* Frameworks */ = {
@@ -209,6 +220,8 @@
 			files = (
 				E572779725846358007BB85D /* LaunchScreen.storyboard in Resources */,
 				E572779425846358007BB85D /* Assets.xcassets in Resources */,
+				E5BF5FA625CDB00500C1192F /* GoogleService-Info (4).plist in Resources */,
+				E584CD2725D401B30074A8F1 /* koukoudoushi.CSV in Resources */,
 				E572779225846350007BB85D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,13 +281,12 @@
 				E5B42CA02588E41000E1CA05 /* testViewController.swift in Sources */,
 				E572778B25846350007BB85D /* AppDelegate.swift in Sources */,
 				E57C7BD925B7FA3500AEB222 /* oneViewController.swift in Sources */,
-				E5BF5F6A25CA92A600C1192F /* base2ViewController.swift in Sources */,
 				E57277A025846440007BB85D /* listViewController.swift in Sources */,
 				E50FA71B25BEA32300B57935 /* toMyListViewController.swift in Sources */,
+				E584CD3B25D7FFD60074A8F1 /* StartViewController.swift in Sources */,
 				E59A86282584B5E90041318A /* List.swift in Sources */,
 				E56F0A992590F4F10019EB18 /* selectedTestViewController.swift in Sources */,
 				E572778D25846350007BB85D /* SceneDelegate.swift in Sources */,
-				E56F0ACD25964B080019EB18 /* toTestViewController.swift in Sources */,
 				E52E988A25C3DFED0001234A /* MyLIstTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8UYB8SMYLG;
+				DEVELOPMENT_TEAM = 2WUWGQ9UZW;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = English/Info.plist;
@@ -433,7 +445,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.daichi.morishita.English;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.2709.daichi.shun.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -447,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8UYB8SMYLG;
+				DEVELOPMENT_TEAM = 2WUWGQ9UZW;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = English/Info.plist;
@@ -456,7 +469,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.daichi.morishita.English;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.2709.daichi.shun.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
