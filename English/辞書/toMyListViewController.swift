@@ -8,52 +8,86 @@
 import UIKit
 import RealmSwift
 import UserNotifications
+import GoogleMobileAds
 
 
-class toMyListViewController: UIViewController {
+class toMyListViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var addWordText: UITextField!
     @IBOutlet weak var addMeaningText: UITextView!
     @IBOutlet weak var addCategoryText: UITextField!
     var addCategoryPicker: UIPickerView = UIPickerView()
+    var bannerView: GADBannerView!//広告
 
     
     let realm = try! Realm()
     var list: List!
     
-    let categoryList = ["動詞","名詞","形容詞、副詞","その他"]
+    let categoryList = ["旅","動詞","名詞","形容詞、副詞","その他"]
     
     
     var receiveWord: String = ""
     var receiveMeaning: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        //広告
+           bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+           addBannerViewToView(bannerView)
+        //広告を読み込んで表示する
+        bannerView.adUnitID = "ca-app-pub-9454016079456680/6800683581"
+         bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
+        //広告イベントの設定
+        bannerView.delegate = self
+        
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
         // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
-
+        
         addWordText.text = receiveWord
         addMeaningText.text = receiveMeaning
-      
+        
         
         // ピッカー設定
         addCategoryPicker.delegate = self
         addCategoryPicker.dataSource = self
-               
-               // 決定バーの生成
-               let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
-               let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-               let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-               toolbar.setItems([spacelItem, doneItem], animated: true)
-               
-               // インプットビュー設定
+        
+        // 決定バーの生成
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+        
+        // インプットビュー設定
         addCategoryText.inputView = addCategoryPicker
         addCategoryText.inputAccessoryView = toolbar
         
         addMeaningText.layer.cornerRadius = 5.0
     }
-   
-   
+    //広告func
+        func addBannerViewToView(_ bannerView: GADBannerView) {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bannerView)
+            view.addConstraints(
+              [NSLayoutConstraint(item: bannerView,
+                                  attribute: .bottom,
+                                  relatedBy: .equal,
+                                  toItem: bottomLayoutGuide,
+                                  attribute: .top,
+                                  multiplier: 1,
+                                  constant: 0),
+               NSLayoutConstraint(item: bannerView,
+                                  attribute: .centerX,
+                                  relatedBy: .equal,
+                                  toItem: view,
+                                  attribute: .centerX,
+                                  multiplier: 1,
+                                  constant: 0)
+              ])
+           }
+
+    
     
     @IBAction func addMyListButton(_ sender: Any) {}
     // segue で画面遷移する時に呼ばれる
@@ -61,7 +95,7 @@ class toMyListViewController: UIViewController {
         let listView:listViewController = segue.destination as! listViewController
         if segue.identifier == "addMySegue" {
             let list = List()
-
+            
             let allLists = realm.objects(List.self).sorted(byKeyPath: "id", ascending: true)
             if allLists.count != 0 {
                 list.id = allLists.max(ofProperty: "id")! + 1
@@ -85,7 +119,7 @@ class toMyListViewController: UIViewController {
         // キーボードを閉じる
         view.endEditing(true)
     }
-
+    
 }
 //MARK: - pickerviewの設定
 extension toMyListViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -106,9 +140,9 @@ extension toMyListViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     // 決定ボタン押下
-       @objc func done() {
+    @objc func done() {
         addCategoryText.endEditing(true)
         addCategoryText.text = "\(categoryList[addCategoryPicker.selectedRow(inComponent: 0)])"
         
-       }
+    }
 }

@@ -14,8 +14,8 @@ class baseViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func toTestButton(_ sender: Any) {
         performSegue(withIdentifier: "toTest", sender: nil)
     }
-    @IBOutlet weak var baseSearch: UISearchBar!
-    @IBOutlet weak var selectPicker: UIPickerView!
+//    @IBOutlet weak var baseSearch: UISearchBar!
+//    @IBOutlet weak var selectPicker: UIPickerView!
     
     // 遷移先のViewControllerに渡す変数
     var giveWord: String = ""
@@ -4336,11 +4336,15 @@ class baseViewController: UIViewController, UITableViewDelegate, UITableViewData
         base1.text = Array(wordmeanings[indexPath.section].keys)[indexPath.row]
         base1.lineBreakMode = .byCharWrapping
         base1.numberOfLines = 3
+        base1.font = UIFont.systemFont(ofSize: 20)
+
         
         let base2 = cell.viewWithTag(2) as! UILabel//単語の意味のlabel
         base2.text = Array(wordmeanings[indexPath.section].values)[indexPath.row]
         base2.lineBreakMode = .byCharWrapping//意味ラベルの改行の種類
         base2.numberOfLines = 3//改行の行数
+        base2.font = UIFont.systemFont(ofSize: 20)
+
         
         return cell
     }

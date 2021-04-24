@@ -7,9 +7,12 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
-class selectedTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class selectedTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     @IBOutlet weak var selectedTestList: UITableView!
+    var bannerView: GADBannerView!//広告
+
     
     let realm = try! Realm()
     var indexNum = 0
@@ -18,6 +21,17 @@ class selectedTestViewController: UIViewController, UITableViewDelegate, UITable
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        // In this case, we instantiate the banner with desired ad size.
+        //広告
+           bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+           addBannerViewToView(bannerView)
+        //広告を読み込んで表示する
+        bannerView.adUnitID = "ca-app-pub-9454016079456680/6800683581"
+         bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
+        //広告イベントの設定
+        bannerView.delegate = self
 
         selectedTestList.dataSource = self
         selectedTestList.delegate =  self
@@ -26,6 +40,27 @@ class selectedTestViewController: UIViewController, UITableViewDelegate, UITable
         navigationItem.title = ""
         
     }
+    //広告func
+        func addBannerViewToView(_ bannerView: GADBannerView) {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bannerView)
+            view.addConstraints(
+              [NSLayoutConstraint(item: bannerView,
+                                  attribute: .bottom,
+                                  relatedBy: .equal,
+                                  toItem: bottomLayoutGuide,
+                                  attribute: .top,
+                                  multiplier: 1,
+                                  constant: 0),
+               NSLayoutConstraint(item: bannerView,
+                                  attribute: .centerX,
+                                  relatedBy: .equal,
+                                  toItem: view,
+                                  attribute: .centerX,
+                                  multiplier: 1,
+                                  constant: 0)
+              ])
+           }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedLevel.count
@@ -38,6 +73,7 @@ class selectedTestViewController: UIViewController, UITableViewDelegate, UITable
         cell.textLabel?.text = selectedLevel[indexPath.row]
         //文字の位置の設定
         cell.textLabel?.textAlignment = .center
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
         
         return cell
     }

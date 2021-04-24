@@ -6,15 +6,20 @@
 //
 
 import UIKit
+import Firebase
+import GoogleMobileAds
+
 
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?//広告
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GADMobileAds.sharedInstance().start(completionHandler: nil)//広告
         
         //チュートリアル画面に必要なコード
         //この下の4行を追加

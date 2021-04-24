@@ -10,6 +10,32 @@
 		E44B3018046177EC5E6B7D70 /* Pods_English.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE1D406D1DFDC99ED85A73F /* Pods_English.framework */; };
 		E50FA71B25BEA32300B57935 /* toMyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FA71A25BEA32300B57935 /* toMyListViewController.swift */; };
 		E52E988A25C3DFED0001234A /* MyLIstTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */; };
+		E53BC9AC262071CC0003CE53 /* sentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53BC9AB262071CC0003CE53 /* sentenceViewController.swift */; };
+		E53BC9B3262163C40003CE53 /* TabiCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53BC9B2262163C40003CE53 /* TabiCategoryViewController.swift */; };
+		E53BC9B6262163E40003CE53 /* TabiSentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53BC9B5262163E40003CE53 /* TabiSentenceViewController.swift */; };
+		E53BC9B9262163F10003CE53 /* TabiWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53BC9B8262163F10003CE53 /* TabiWordViewController.swift */; };
+		E53BC9C7262485B10003CE53 /* tabifure-zu.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9C6262485B10003CE53 /* tabifure-zu.csv */; };
+		E53BC9D226249ED70003CE53 /* TabisentenceDitailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53BC9D126249ED70003CE53 /* TabisentenceDitailViewController.swift */; };
+		E53BC9DA262572400003CE53 /* seikatsuyouhin.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9D9262572400003CE53 /* seikatsuyouhin.csv */; };
+		E53BC9DD2625A2E50003CE53 /* gakkou.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9DC2625A2E50003CE53 /* gakkou.csv */; };
+		E53BC9E32626DCC60003CE53 /* kiso.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9E22626DCC60003CE53 /* kiso.csv */; };
+		E53BC9E72626E1B60003CE53 /* hoken.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9E62626E1B60003CE53 /* hoken.csv */; };
+		E53BC9EA2626E1CA0003CE53 /* kazoku.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9E92626E1CA0003CE53 /* kazoku.csv */; };
+		E53BC9ED2626E1E70003CE53 /* shuukyou.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9EC2626E1E70003CE53 /* shuukyou.csv */; };
+		E53BC9F02626E20E0003CE53 /* shukujitsu.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9EF2626E20E0003CE53 /* shukujitsu.csv */; };
+		E53BC9F32626E21E0003CE53 /* juusho.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9F22626E21E0003CE53 /* juusho.csv */; };
+		E53BC9F62626E2320003CE53 /* ishokujuu.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9F52626E2320003CE53 /* ishokujuu.csv */; };
+		E53BC9FA2626E2410003CE53 /* biyou.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9F92626E2410003CE53 /* biyou.csv */; };
+		E53BC9FD2626E2570003CE53 /* koukyoushisetsu.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9FC2626E2570003CE53 /* koukyoushisetsu.csv */; };
+		E53BCA002626E2660003CE53 /* omise.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BC9FF2626E2660003CE53 /* omise.csv */; };
+		E53BCA032626E2A40003CE53 /* byouin.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BCA022626E2A40003CE53 /* byouin.csv */; };
+		E53BCA082626E2CB0003CE53 /* akushident.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BCA072626E2CB0003CE53 /* akushident.csv */; };
+		E53BCA0C2626E2D90003CE53 /* chinntai.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BCA0B2626E2D90003CE53 /* chinntai.csv */; };
+		E53BCA0F2626E2E80003CE53 /* ginnkou.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BCA0E2626E2E80003CE53 /* ginnkou.csv */; };
+		E53BCA122626E30A0003CE53 /* kuruma.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BCA112626E30A0003CE53 /* kuruma.csv */; };
+		E53BCA152626E31C0003CE53 /* kannkou.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BCA142626E31C0003CE53 /* kannkou.csv */; };
+		E53BCA182626E32A0003CE53 /* hoteru.csv in Resources */ = {isa = PBXBuildFile; fileRef = E53BCA172626E32A0003CE53 /* hoteru.csv */; };
+		E53BCA1E262701310003CE53 /* PraeParetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53BCA1D262701310003CE53 /* PraeParetViewController.swift */; };
 		E56F0A992590F4F10019EB18 /* selectedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */; };
 		E56F0AD12596FF640019EB18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0AD02596FF640019EB18 /* ViewController.swift */; };
 		E572778B25846350007BB85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572778A25846350007BB85D /* AppDelegate.swift */; };
@@ -24,8 +50,8 @@
 		E584CD3B25D7FFD60074A8F1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E584CD3A25D7FFD60074A8F1 /* StartViewController.swift */; };
 		E59A86282584B5E90041318A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A86272584B5E90041318A /* List.swift */; };
 		E59A86382585C4FA0041318A /* baseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A86372585C4FA0041318A /* baseViewController.swift */; };
+		E5A29B25260C9AB7006B7CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A29B24260C9AB7006B7CB0 /* GoogleService-Info.plist */; };
 		E5B42CA02588E41000E1CA05 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B42C9F2588E41000E1CA05 /* testViewController.swift */; };
-		E5BF5FA625CDB00500C1192F /* GoogleService-Info (4).plist in Resources */ = {isa = PBXBuildFile; fileRef = E5BF5FA525CDB00500C1192F /* GoogleService-Info (4).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +60,32 @@
 		2CE1D406D1DFDC99ED85A73F /* Pods_English.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_English.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50FA71A25BEA32300B57935 /* toMyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toMyListViewController.swift; sourceTree = "<group>"; };
 		E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLIstTestViewController.swift; sourceTree = "<group>"; };
+		E53BC9AB262071CC0003CE53 /* sentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentenceViewController.swift; sourceTree = "<group>"; };
+		E53BC9B2262163C40003CE53 /* TabiCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabiCategoryViewController.swift; sourceTree = "<group>"; };
+		E53BC9B5262163E40003CE53 /* TabiSentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabiSentenceViewController.swift; sourceTree = "<group>"; };
+		E53BC9B8262163F10003CE53 /* TabiWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabiWordViewController.swift; sourceTree = "<group>"; };
+		E53BC9C6262485B10003CE53 /* tabifure-zu.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "tabifure-zu.csv"; sourceTree = "<group>"; };
+		E53BC9D126249ED70003CE53 /* TabisentenceDitailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabisentenceDitailViewController.swift; sourceTree = "<group>"; };
+		E53BC9D9262572400003CE53 /* seikatsuyouhin.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = seikatsuyouhin.csv; sourceTree = "<group>"; };
+		E53BC9DC2625A2E50003CE53 /* gakkou.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = gakkou.csv; sourceTree = "<group>"; };
+		E53BC9E22626DCC60003CE53 /* kiso.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = kiso.csv; sourceTree = "<group>"; };
+		E53BC9E62626E1B60003CE53 /* hoken.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = hoken.csv; sourceTree = "<group>"; };
+		E53BC9E92626E1CA0003CE53 /* kazoku.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = kazoku.csv; sourceTree = "<group>"; };
+		E53BC9EC2626E1E70003CE53 /* shuukyou.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = shuukyou.csv; sourceTree = "<group>"; };
+		E53BC9EF2626E20E0003CE53 /* shukujitsu.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = shukujitsu.csv; sourceTree = "<group>"; };
+		E53BC9F22626E21E0003CE53 /* juusho.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = juusho.csv; sourceTree = "<group>"; };
+		E53BC9F52626E2320003CE53 /* ishokujuu.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = ishokujuu.csv; sourceTree = "<group>"; };
+		E53BC9F92626E2410003CE53 /* biyou.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = biyou.csv; sourceTree = "<group>"; };
+		E53BC9FC2626E2570003CE53 /* koukyoushisetsu.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = koukyoushisetsu.csv; sourceTree = "<group>"; };
+		E53BC9FF2626E2660003CE53 /* omise.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = omise.csv; sourceTree = "<group>"; };
+		E53BCA022626E2A40003CE53 /* byouin.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = byouin.csv; sourceTree = "<group>"; };
+		E53BCA072626E2CB0003CE53 /* akushident.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = akushident.csv; sourceTree = "<group>"; };
+		E53BCA0B2626E2D90003CE53 /* chinntai.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = chinntai.csv; sourceTree = "<group>"; };
+		E53BCA0E2626E2E80003CE53 /* ginnkou.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = ginnkou.csv; sourceTree = "<group>"; };
+		E53BCA112626E30A0003CE53 /* kuruma.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = kuruma.csv; sourceTree = "<group>"; };
+		E53BCA142626E31C0003CE53 /* kannkou.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = kannkou.csv; sourceTree = "<group>"; };
+		E53BCA172626E32A0003CE53 /* hoteru.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = hoteru.csv; sourceTree = "<group>"; };
+		E53BCA1D262701310003CE53 /* PraeParetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraeParetViewController.swift; sourceTree = "<group>"; };
 		E56F0A982590F4F10019EB18 /* selectedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedTestViewController.swift; sourceTree = "<group>"; };
 		E56F0AD02596FF640019EB18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E572778725846350007BB85D /* English.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = English.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,8 +102,8 @@
 		E584CD3A25D7FFD60074A8F1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		E59A86272584B5E90041318A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		E59A86372585C4FA0041318A /* baseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseViewController.swift; sourceTree = "<group>"; };
+		E5A29B24260C9AB7006B7CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5B42C9F2588E41000E1CA05 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
-		E5BF5FA525CDB00500C1192F /* GoogleService-Info (4).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (4).plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +118,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E53BC9BB262163F70003CE53 /* 旅関連 */ = {
+			isa = PBXGroup;
+			children = (
+				E53BCA1D262701310003CE53 /* PraeParetViewController.swift */,
+				E53BC9AB262071CC0003CE53 /* sentenceViewController.swift */,
+				E53BC9B2262163C40003CE53 /* TabiCategoryViewController.swift */,
+				E53BC9B8262163F10003CE53 /* TabiWordViewController.swift */,
+				E53BC9B5262163E40003CE53 /* TabiSentenceViewController.swift */,
+				E53BC9D126249ED70003CE53 /* TabisentenceDitailViewController.swift */,
+				E53BC9C6262485B10003CE53 /* tabifure-zu.csv */,
+				E53BC9DF2625D0590003CE53 /* 旅単語 */,
+			);
+			path = "旅関連";
+			sourceTree = "<group>";
+		};
+		E53BC9DF2625D0590003CE53 /* 旅単語 */ = {
+			isa = PBXGroup;
+			children = (
+				E53BC9E22626DCC60003CE53 /* kiso.csv */,
+				E53BC9D9262572400003CE53 /* seikatsuyouhin.csv */,
+				E53BC9DC2625A2E50003CE53 /* gakkou.csv */,
+				E53BC9E62626E1B60003CE53 /* hoken.csv */,
+				E53BC9E92626E1CA0003CE53 /* kazoku.csv */,
+				E53BC9EC2626E1E70003CE53 /* shuukyou.csv */,
+				E53BC9EF2626E20E0003CE53 /* shukujitsu.csv */,
+				E53BC9F22626E21E0003CE53 /* juusho.csv */,
+				E53BC9F52626E2320003CE53 /* ishokujuu.csv */,
+				E53BC9F92626E2410003CE53 /* biyou.csv */,
+				E53BC9FC2626E2570003CE53 /* koukyoushisetsu.csv */,
+				E53BC9FF2626E2660003CE53 /* omise.csv */,
+				E53BCA022626E2A40003CE53 /* byouin.csv */,
+				E53BCA072626E2CB0003CE53 /* akushident.csv */,
+				E53BCA0B2626E2D90003CE53 /* chinntai.csv */,
+				E53BCA0E2626E2E80003CE53 /* ginnkou.csv */,
+				E53BCA112626E30A0003CE53 /* kuruma.csv */,
+				E53BCA142626E31C0003CE53 /* kannkou.csv */,
+				E53BCA172626E32A0003CE53 /* hoteru.csv */,
+			);
+			path = "旅単語";
+			sourceTree = "<group>";
+		};
 		E56F0A9B2590F4FA0019EB18 /* 辞書 */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,17 +212,18 @@
 			children = (
 				E572779025846350007BB85D /* Main.storyboard */,
 				E584CD3A25D7FFD60074A8F1 /* StartViewController.swift */,
-				E56F0AD02596FF640019EB18 /* ViewController.swift */,
+				E53BC9BB262163F70003CE53 /* 旅関連 */,
 				E56F0A9B2590F4FA0019EB18 /* 辞書 */,
 				E56F0A9D2590F5540019EB18 /* テスト */,
 				E56F0A9C2590F52C0019EB18 /* 自分リスト */,
-				E572778A25846350007BB85D /* AppDelegate.swift */,
 				E584CD2B25D401C10074A8F1 /* csvファイル */,
+				E56F0AD02596FF640019EB18 /* ViewController.swift */,
 				E572778C25846350007BB85D /* SceneDelegate.swift */,
+				E572778A25846350007BB85D /* AppDelegate.swift */,
 				E572779325846358007BB85D /* Assets.xcassets */,
 				E572779525846358007BB85D /* LaunchScreen.storyboard */,
 				E572779825846358007BB85D /* Info.plist */,
-				E5BF5FA525CDB00500C1192F /* GoogleService-Info (4).plist */,
+				E5A29B24260C9AB7006B7CB0 /* GoogleService-Info.plist */,
 			);
 			path = English;
 			sourceTree = "<group>";
@@ -219,10 +313,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				E572779725846358007BB85D /* LaunchScreen.storyboard in Resources */,
+				E53BC9EA2626E1CA0003CE53 /* kazoku.csv in Resources */,
+				E53BCA122626E30A0003CE53 /* kuruma.csv in Resources */,
+				E53BCA0F2626E2E80003CE53 /* ginnkou.csv in Resources */,
+				E53BC9DA262572400003CE53 /* seikatsuyouhin.csv in Resources */,
+				E53BCA0C2626E2D90003CE53 /* chinntai.csv in Resources */,
+				E53BC9F62626E2320003CE53 /* ishokujuu.csv in Resources */,
+				E53BCA082626E2CB0003CE53 /* akushident.csv in Resources */,
+				E53BC9E32626DCC60003CE53 /* kiso.csv in Resources */,
 				E572779425846358007BB85D /* Assets.xcassets in Resources */,
-				E5BF5FA625CDB00500C1192F /* GoogleService-Info (4).plist in Resources */,
+				E5A29B25260C9AB7006B7CB0 /* GoogleService-Info.plist in Resources */,
+				E53BC9C7262485B10003CE53 /* tabifure-zu.csv in Resources */,
+				E53BC9ED2626E1E70003CE53 /* shuukyou.csv in Resources */,
 				E584CD2725D401B30074A8F1 /* koukoudoushi.CSV in Resources */,
 				E572779225846350007BB85D /* Main.storyboard in Resources */,
+				E53BCA182626E32A0003CE53 /* hoteru.csv in Resources */,
+				E53BC9FD2626E2570003CE53 /* koukyoushisetsu.csv in Resources */,
+				E53BC9FA2626E2410003CE53 /* biyou.csv in Resources */,
+				E53BC9F32626E21E0003CE53 /* juusho.csv in Resources */,
+				E53BC9E72626E1B60003CE53 /* hoken.csv in Resources */,
+				E53BC9DD2625A2E50003CE53 /* gakkou.csv in Resources */,
+				E53BCA152626E31C0003CE53 /* kannkou.csv in Resources */,
+				E53BCA002626E2660003CE53 /* omise.csv in Resources */,
+				E53BCA032626E2A40003CE53 /* byouin.csv in Resources */,
+				E53BC9F02626E20E0003CE53 /* shukujitsu.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +392,7 @@
 				E56F0AD12596FF640019EB18 /* ViewController.swift in Sources */,
 				E57277B22584728B007BB85D /* InputViewController.swift in Sources */,
 				E59A86382585C4FA0041318A /* baseViewController.swift in Sources */,
+				E53BCA1E262701310003CE53 /* PraeParetViewController.swift in Sources */,
 				E5B42CA02588E41000E1CA05 /* testViewController.swift in Sources */,
 				E572778B25846350007BB85D /* AppDelegate.swift in Sources */,
 				E57C7BD925B7FA3500AEB222 /* oneViewController.swift in Sources */,
@@ -286,8 +401,13 @@
 				E584CD3B25D7FFD60074A8F1 /* StartViewController.swift in Sources */,
 				E59A86282584B5E90041318A /* List.swift in Sources */,
 				E56F0A992590F4F10019EB18 /* selectedTestViewController.swift in Sources */,
+				E53BC9AC262071CC0003CE53 /* sentenceViewController.swift in Sources */,
+				E53BC9D226249ED70003CE53 /* TabisentenceDitailViewController.swift in Sources */,
 				E572778D25846350007BB85D /* SceneDelegate.swift in Sources */,
 				E52E988A25C3DFED0001234A /* MyLIstTestViewController.swift in Sources */,
+				E53BC9B9262163F10003CE53 /* TabiWordViewController.swift in Sources */,
+				E53BC9B6262163E40003CE53 /* TabiSentenceViewController.swift in Sources */,
+				E53BC9B3262163C40003CE53 /* TabiCategoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,16 +556,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1.3;
 				DEVELOPMENT_TEAM = 2WUWGQ9UZW;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = English/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_MAP_FILE_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.2709.daichi.shun.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -460,16 +582,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1.3;
 				DEVELOPMENT_TEAM = 2WUWGQ9UZW;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = English/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_MAP_FILE_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.2709.daichi.shun.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

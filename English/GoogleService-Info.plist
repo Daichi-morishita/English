@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>392007810386-4jlu0mt8ofv7bh1dtn4nkqdpdmlorntf.apps.googleusercontent.com</string>
+	<string>1094637359191-hd53s2vo3uae63uj9hlb3htshlcoujok.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.392007810386-4jlu0mt8ofv7bh1dtn4nkqdpdmlorntf</string>
+	<string>com.googleusercontent.apps.1094637359191-hd53s2vo3uae63uj9hlb3htshlcoujok</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBxrLKvN0malWjJz42Gi8TWXcvQ3o8QMhk</string>
+	<string>AIzaSyAXC01n8NQITvimiC2CP7WtuAoIcpvLSCA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>392007810386</string>
+	<string>1094637359191</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>jp.2709.daichi.shun.English</string>
 	<key>PROJECT_ID</key>
-	<string>englishword-26878</string>
+	<string>englishword-advertising</string>
 	<key>STORAGE_BUCKET</key>
-	<string>englishword-26878.appspot.com</string>
+	<string>englishword-advertising.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:392007810386:ios:478add89c92c356ffd0e8b</string>
+	<string>1:1094637359191:ios:dbaddd4e59e68050c75312</string>
 </dict>
 </plist>

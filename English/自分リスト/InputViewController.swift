@@ -8,22 +8,37 @@
 import UIKit
 import RealmSwift
 import UserNotifications
+import GoogleMobileAds
 
 
-class InputViewController: UIViewController {
+class InputViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var wordTextView: UITextView!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var categoryTextField: UITextField!
     var categoryPicker: UIPickerView = UIPickerView()
+    var bannerView: GADBannerView!//広告
 
     
     let realm = try! Realm()
     var list: List!
    
-    let categoryList = ["動詞","名詞","形容詞、副詞","その他"]
+    let categoryList = ["旅","動詞","名詞","形容詞、副詞","その他"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // In this case, we instantiate the banner with desired ad size.
+        //広告
+           bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+           addBannerViewToView(bannerView)
+        //広告を読み込んで表示する
+        bannerView.adUnitID = "ca-app-pub-9454016079456680/6800683581"
+         bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
+        //広告イベントの設定
+        bannerView.delegate = self
+    
         
         // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
@@ -75,6 +90,29 @@ class InputViewController: UIViewController {
         }
         super.viewWillDisappear(animated)
     }
+    
+    //広告func
+        func addBannerViewToView(_ bannerView: GADBannerView) {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bannerView)
+            view.addConstraints(
+              [NSLayoutConstraint(item: bannerView,
+                                  attribute: .bottom,
+                                  relatedBy: .equal,
+                                  toItem: bottomLayoutGuide,
+                                  attribute: .top,
+                                  multiplier: 1,
+                                  constant: 0),
+               NSLayoutConstraint(item: bannerView,
+                                  attribute: .centerX,
+                                  relatedBy: .equal,
+                                  toItem: view,
+                                  attribute: .centerX,
+                                  multiplier: 1,
+                                  constant: 0)
+              ])
+           }
+
     
     
     @objc func dismissKeyboard(){

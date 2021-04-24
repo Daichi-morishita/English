@@ -7,8 +7,9 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
-class testViewController: UIViewController {
+class testViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var testWord: UILabel!
     @IBOutlet weak var testMeaning: UILabel!
     @IBOutlet weak var testView: UIView!
@@ -17,7 +18,7 @@ class testViewController: UIViewController {
     @IBOutlet weak var switchLabel: UILabel!
     @IBOutlet weak var answerButtun: UIButton!
     @IBOutlet weak var randomSwich1: UISwitch!
-    
+    var bannerView: GADBannerView!//広告
 
     let realm = try! Realm()
     var list: List!
@@ -4086,7 +4087,18 @@ class testViewController: UIViewController {
     //MARK: - viewDidload
     override func viewDidLoad() {
         super.viewDidLoad()
-//        testLabel.text = "\(passedId)"　//前のテーブルビューの選択された行の確認用
+        // In this case, we instantiate the banner with desired ad size.
+        //広告
+           bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+           addBannerViewToView(bannerView)
+        //広告を読み込んで表示する
+        bannerView.adUnitID = "ca-app-pub-9454016079456680/6800683581"
+         bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
+        //広告イベントの設定
+        bannerView.delegate = self
+        //testLabel.text = "\(passedId)"　//前のテーブルビューの選択された行の確認用
         
         //選択された行によっての条件分岐
         switch passedId {
@@ -4133,6 +4145,27 @@ class testViewController: UIViewController {
         answerButtun.layer.cornerRadius = 30.0
 
     }
+    //広告func
+        func addBannerViewToView(_ bannerView: GADBannerView) {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bannerView)
+            view.addConstraints(
+              [NSLayoutConstraint(item: bannerView,
+                                  attribute: .bottom,
+                                  relatedBy: .equal,
+                                  toItem: bottomLayoutGuide,
+                                  attribute: .top,
+                                  multiplier: 1,
+                                  constant: 0),
+               NSLayoutConstraint(item: bannerView,
+                                  attribute: .centerX,
+                                  relatedBy: .equal,
+                                  toItem: view,
+                                  attribute: .centerX,
+                                  multiplier: 1,
+                                  constant: 0)
+              ])
+           }
  
     //日本語訳の設定
     @IBAction func answerButtun(_ sender: Any) {

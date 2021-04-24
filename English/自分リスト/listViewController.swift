@@ -7,10 +7,13 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 
-class listViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
+class listViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, GADBannerViewDelegate{
     @IBOutlet weak var englishList: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var bannerView: GADBannerView!//広告
     
     // Realmインスタンスを取得する
     let realm = try! Realm()
@@ -38,6 +41,19 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // In this case, we instantiate the banner with desired ad size.
+        //広告
+           bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+           addBannerViewToView(bannerView)
+        //広告を読み込んで表示する
+        bannerView.adUnitID = "ca-app-pub-9454016079456680/6800683581"
+         bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
+        //広告イベントの設定
+        bannerView.delegate = self
+    
         englishList.delegate = self
         englishList.dataSource = self
         
@@ -79,6 +95,28 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         englishList.reloadData()
     }
+    
+    //広告func
+        func addBannerViewToView(_ bannerView: GADBannerView) {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bannerView)
+            view.addConstraints(
+              [NSLayoutConstraint(item: bannerView,
+                                  attribute: .bottom,
+                                  relatedBy: .equal,
+                                  toItem: bottomLayoutGuide,
+                                  attribute: .top,
+                                  multiplier: 1,
+                                  constant: 0),
+               NSLayoutConstraint(item: bannerView,
+                                  attribute: .centerX,
+                                  relatedBy: .equal,
+                                  toItem: view,
+                                  attribute: .centerX,
+                                  multiplier: 1,
+                                  constant: 0)
+              ])
+           }
     
     //　MARK:　- アクションシートの設定
     @IBAction func sortButton(_ sender: Any) {
@@ -124,14 +162,21 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         let actionSheet = UIAlertController(title: "カテゴリー", message: "", preferredStyle: UIAlertController.Style.actionSheet)
         
         // 表示させたいタイトル1ボタンが押された時の処理をクロージャ実装する
-        let action1 = UIAlertAction(title: "動詞", style: UIAlertAction.Style.default, handler: {
+        let action1 = UIAlertAction(title: "旅", style: UIAlertAction.Style.default, handler: {
+            (action: UIAlertAction!) in
+            //実際の処理
+            self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH '旅'")
+            self.englishList.reloadData()
+        })
+        // 表示させたいタイトル1ボタンが押された時の処理をクロージャ実装する
+        let action2 = UIAlertAction(title: "動詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
             self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH '動詞'")
             self.englishList.reloadData()
         })
         // 表示させたいタイトル2ボタンが押された時の処理をクロージャ実装する
-        let action2 = UIAlertAction(title: "名詞", style: UIAlertAction.Style.default, handler: {
+        let action3 = UIAlertAction(title: "名詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
             self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH '名詞'")
@@ -139,7 +184,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
         
         // 表示させたいタイトル３ボタンが押された時の処理をクロージャ実装する
-        let action3 = UIAlertAction(title: "形容詞", style: UIAlertAction.Style.default, handler: {
+        let action4 = UIAlertAction(title: "形容詞", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
             self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH '形容詞'")
@@ -147,7 +192,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
         
         // 表示させたいタイトル４ボタンが押された時の処理をクロージャ実装する
-        let action4 = UIAlertAction(title: "その他", style: UIAlertAction.Style.default, handler: {
+        let action5 = UIAlertAction(title: "その他", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) in
             //実際の処理
             self.listArray = self.realm.objects(List.self).sorted(byKeyPath: "word", ascending: true).filter("category BEGINSWITH 'その他'")
@@ -170,6 +215,7 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
         actionSheet.addAction(action2)
         actionSheet.addAction(action3)
         actionSheet.addAction(action4)
+        actionSheet.addAction(action5)
         actionSheet.addAction(close)
         
         //実際にAlertを表示する

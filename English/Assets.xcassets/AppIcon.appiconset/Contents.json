@@ -31,7 +31,7 @@
       "size" : "29x29"
     },
     {
-      "filename" : "Icon-App-40x40@2x-1.png",
+      "filename" : "Icon-App-40x40@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
@@ -113,12 +113,6 @@
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
-    },
-    {
-      "filename" : "Icon-App-76x76@2x.png",
-      "idiom" : "iphone",
-      "scale" : "2x",
-      "size" : "76x76"
     }
   ],
   "info" : {

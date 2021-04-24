@@ -19,7 +19,7 @@ class StartViewController: UIViewController {
         // scrollViewの画面表示サイズを指定
         scrollView = UIScrollView(frame: CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 1000))
         // scrollViewのサイズを指定（幅は1メニューに表示するViewの幅×(掛ける)ページ数）
-        scrollView.contentSize = CGSize(width: self.view.frame.size.width*4, height: 1000)
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width*3, height: 1000)
         // scrollViewのデリゲートになる
         scrollView.delegate = self
         // メニュー単位のスクロールを可能にする
@@ -41,7 +41,7 @@ class StartViewController: UIViewController {
         // pageControlの表示位置とサイズの設定
         pageControl = UIPageControl(frame: CGRect(x: 0, y: 800, width: self.view.frame.size.width, height: 30))
         // pageControlのページ数を設定
-        pageControl.numberOfPages = 4
+        pageControl.numberOfPages = 3
         // pageControlのドットの色
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         // pageControlの現在のページのドットの色
