@@ -9,7 +9,8 @@ import UIKit
 import RealmSwift
 import UserNotifications
 import GoogleMobileAds
-
+import AppTrackingTransparency
+import AdSupport
 
 class toMyListViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var addWordText: UITextField!
@@ -17,6 +18,8 @@ class toMyListViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var addCategoryText: UITextField!
     var addCategoryPicker: UIPickerView = UIPickerView()
     var bannerView: GADBannerView!//広告
+    var testAdmob: Bool = false
+    let id = ASIdentifierManager.shared().advertisingIdentifier.uuidString
 
     
     let realm = try! Realm()
@@ -33,7 +36,11 @@ class toMyListViewController: UIViewController, GADBannerViewDelegate {
            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
            addBannerViewToView(bannerView)
         //広告を読み込んで表示する
-        bannerView.adUnitID = "ca-app-pub-9454016079456680/6800683581"
+        if testAdmob == true{
+            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        }else{
+            bannerView.adUnitID = "ca-app-pub-9454016079456680/9186203579"
+        }
          bannerView.rootViewController = self
         bannerView.load(GADRequest())
 
@@ -73,7 +80,7 @@ class toMyListViewController: UIViewController, GADBannerViewDelegate {
               [NSLayoutConstraint(item: bannerView,
                                   attribute: .bottom,
                                   relatedBy: .equal,
-                                  toItem: bottomLayoutGuide,
+                                  toItem: view,
                                   attribute: .top,
                                   multiplier: 1,
                                   constant: 0),
@@ -86,6 +93,28 @@ class toMyListViewController: UIViewController, GADBannerViewDelegate {
                                   constant: 0)
               ])
            }
+    func requestIDFA() {
+      ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+        // Tracking authorization completed. Start loading ads here.
+        // loadAd()
+      })
+    }
+    //広告func トラッキング対策
+    func isAdvertisingTrackingEnabled() -> Bool {
+        if #available(iOS 14, *) {
+            let status = ATTrackingManager.trackingAuthorizationStatus
+            switch status {
+            case .notDetermined, .restricted, .denied:
+                return false
+            case .authorized:
+                return true
+            @unknown default:
+                return false
+            }
+        } else {
+            return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
+        }
+    }
 
     
     

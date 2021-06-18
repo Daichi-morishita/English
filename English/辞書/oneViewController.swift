@@ -14,6 +14,8 @@ import AdSupport
 class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate  {
     @IBOutlet weak var oneTableView: UITableView!
     var bannerView: GADBannerView!//広告
+    var testAdmob: Bool = true
+    let id = ASIdentifierManager.shared().advertisingIdentifier.uuidString
     
     let selectedOne = ["高校英単語","旅英語"]
 //    //上の変数が増えれば下の変数も増やす
@@ -36,7 +38,11 @@ class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
            addBannerViewToView(bannerView)
         //広告を読み込んで表示する
-        bannerView.adUnitID = "ca-app-pub-9454016079456680/6800683581"
+        if testAdmob == true{
+            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        }else{
+            bannerView.adUnitID = "ca-app-pub-9454016079456680/9186203579"
+        }
          bannerView.rootViewController = self
         bannerView.load(GADRequest())
 
@@ -93,7 +99,6 @@ class oneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // loadAd()
       })
     }
-
     // セルの数を指定
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            // someArrayの中身の数だけセルを表示

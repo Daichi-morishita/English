@@ -8,8 +8,8 @@
 import UIKit
 import Firebase
 import GoogleMobileAds
-
-
+import AppTrackingTransparency
+import AdSupport
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         GADMobileAds.sharedInstance().start(completionHandler: nil)//広告
         
         //チュートリアル画面に必要なコード

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E44B3018046177EC5E6B7D70 /* Pods_English.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE1D406D1DFDC99ED85A73F /* Pods_English.framework */; };
 		E50FA71B25BEA32300B57935 /* toMyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FA71A25BEA32300B57935 /* toMyListViewController.swift */; };
+		E51A8C4026429A27009FC805 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51A8C3F26429A27009FC805 /* AppTrackingTransparency.framework */; };
+		E51A8C4226429FDC009FC805 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51A8C4126429FDC009FC805 /* AdSupport.framework */; };
 		E52E988A25C3DFED0001234A /* MyLIstTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */; };
 		E53BC9AC262071CC0003CE53 /* sentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53BC9AB262071CC0003CE53 /* sentenceViewController.swift */; };
 		E53BC9B3262163C40003CE53 /* TabiCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53BC9B2262163C40003CE53 /* TabiCategoryViewController.swift */; };
@@ -59,6 +61,8 @@
 		29547FA04D8A035CDCF2FD51 /* Pods-English.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-English.debug.xcconfig"; path = "Target Support Files/Pods-English/Pods-English.debug.xcconfig"; sourceTree = "<group>"; };
 		2CE1D406D1DFDC99ED85A73F /* Pods_English.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_English.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50FA71A25BEA32300B57935 /* toMyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toMyListViewController.swift; sourceTree = "<group>"; };
+		E51A8C3F26429A27009FC805 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		E51A8C4126429FDC009FC805 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		E52E988925C3DFED0001234A /* MyLIstTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLIstTestViewController.swift; sourceTree = "<group>"; };
 		E53BC9AB262071CC0003CE53 /* sentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentenceViewController.swift; sourceTree = "<group>"; };
 		E53BC9B2262163C40003CE53 /* TabiCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabiCategoryViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44B3018046177EC5E6B7D70 /* Pods_English.framework in Frameworks */,
+				E51A8C4026429A27009FC805 /* AppTrackingTransparency.framework in Frameworks */,
+				E51A8C4226429FDC009FC805 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,9 +127,9 @@
 		E53BC9BB262163F70003CE53 /* 旅関連 */ = {
 			isa = PBXGroup;
 			children = (
+				E53BC9B2262163C40003CE53 /* TabiCategoryViewController.swift */,
 				E53BCA1D262701310003CE53 /* PraeParetViewController.swift */,
 				E53BC9AB262071CC0003CE53 /* sentenceViewController.swift */,
-				E53BC9B2262163C40003CE53 /* TabiCategoryViewController.swift */,
 				E53BC9B8262163F10003CE53 /* TabiWordViewController.swift */,
 				E53BC9B5262163E40003CE53 /* TabiSentenceViewController.swift */,
 				E53BC9D126249ED70003CE53 /* TabisentenceDitailViewController.swift */,
@@ -239,6 +245,8 @@
 		F782A30A95B1374D6666669D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E51A8C4126429FDC009FC805 /* AdSupport.framework */,
+				E51A8C3F26429A27009FC805 /* AppTrackingTransparency.framework */,
 				2CE1D406D1DFDC99ED85A73F /* Pods_English.framework */,
 			);
 			name = Frameworks;
@@ -556,7 +564,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.3;
+				CURRENT_PROJECT_VERSION = 1.1.4;
 				DEVELOPMENT_TEAM = 2WUWGQ9UZW;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -567,7 +575,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.2709.daichi.shun.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -582,7 +590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.3;
+				CURRENT_PROJECT_VERSION = 1.1.4;
 				DEVELOPMENT_TEAM = 2WUWGQ9UZW;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -593,7 +601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.2709.daichi.shun.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

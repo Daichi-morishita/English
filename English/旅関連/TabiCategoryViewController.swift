@@ -7,11 +7,15 @@
 
 import UIKit
 import GoogleMobileAds
+import AppTrackingTransparency
+import AdSupport
 
 class TabiCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
     @IBOutlet weak var tabiTableView: UITableView!
     var bannerView: GADBannerView!//広告
+    var testAdmob: Bool = false
+    let id = ASIdentifierManager.shared().advertisingIdentifier.uuidString
     
     
     var tabiChoosed = ["旅フレーズ", "旅単語"]
@@ -27,10 +31,14 @@ class TabiCategoryViewController: UIViewController, UITableViewDelegate, UITable
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBannerViewToView(bannerView)
         //広告を読み込んで表示する
-        bannerView.adUnitID = "ca-app-pub-9454016079456680/6800683581"
+        if testAdmob == true{
+            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        }else{
+            bannerView.adUnitID = "ca-app-pub-9454016079456680/9186203579"
+        }
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
-        
+
         //広告イベントの設定
         bannerView.delegate = self
         
@@ -46,7 +54,7 @@ class TabiCategoryViewController: UIViewController, UITableViewDelegate, UITable
             [NSLayoutConstraint(item: bannerView,
                                 attribute: .bottom,
                                 relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
+                                toItem: view,
                                 attribute: .top,
                                 multiplier: 1,
                                 constant: 0),
@@ -58,6 +66,28 @@ class TabiCategoryViewController: UIViewController, UITableViewDelegate, UITable
                                 multiplier: 1,
                                 constant: 0)
             ])
+    }
+    func requestIDFA() {
+      ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+        // Tracking authorization completed. Start loading ads here.
+        // loadAd()
+      })
+    }
+    //広告func トラッキング対策
+    func isAdvertisingTrackingEnabled() -> Bool {
+        if #available(iOS 14, *) {
+            let status = ATTrackingManager.trackingAuthorizationStatus
+            switch status {
+            case .notDetermined, .restricted, .denied:
+                return false
+            case .authorized:
+                return true
+            @unknown default:
+                return false
+            }
+        } else {
+            return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
+        }
     }
     
     // セルの数を指定

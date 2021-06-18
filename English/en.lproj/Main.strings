@@ -1,0 +1,144 @@
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "061-hV-aa0"; */
+"061-hV-aa0.title" = "戻る";
+
+/* Class = "UITabBarItem"; title = "英単語帳"; ObjectID = "1kW-p5-uzn"; */
+"1kW-p5-uzn.title" = "英単語帳";
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "1wx-ZX-1iV"; */
+"1wx-ZX-1iV.title" = "戻る";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3Nl-Oz-drQ"; */
+"3Nl-Oz-drQ.text" = "Label";
+
+/* Class = "UILabel"; text = "意味"; ObjectID = "4Ti-nf-XqM"; */
+"4Ti-nf-XqM.text" = "意味";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "52O-QS-3dJ"; */
+"52O-QS-3dJ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "自分リストに追加　＞"; ObjectID = "5De-rS-dKg"; */
+"5De-rS-dKg.normalTitle" = "自分リストに追加　＞";
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "62d-Qj-maX"; */
+"62d-Qj-maX.title" = "戻る";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7tB-CB-5XH"; */
+"7tB-CB-5XH.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "自分リスト"; ObjectID = "Cxa-s7-YiQ"; */
+"Cxa-s7-YiQ.title" = "自分リスト";
+
+/* Class = "UILabel"; text = "ランダムOFF"; ObjectID = "EoF-K6-U0h"; */
+"EoF-K6-U0h.text" = "ランダムOFF";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "GGo-66-4d6"; */
+"GGo-66-4d6.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "Gju-G2-9Zi"; */
+"Gju-G2-9Zi.title" = "戻る";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "HId-qW-2Bx"; */
+"HId-qW-2Bx.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "IpJ-91-fc5"; */
+"IpJ-91-fc5.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "JAA-YH-Lel"; */
+"JAA-YH-Lel.title" = "戻る";
+
+/* Class = "UIButton"; normalTitle = "意味"; ObjectID = "Ja4-c0-YAG"; */
+"Ja4-c0-YAG.normalTitle" = "意味";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Kez-ft-9CW"; */
+"Kez-ft-9CW.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "編集"; ObjectID = "L2n-qe-Bov"; */
+"L2n-qe-Bov.title" = "編集";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "N8X-lD-3vj"; */
+"N8X-lD-3vj.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "ObL-z7-2eq"; */
+"ObL-z7-2eq.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "P43-YO-6S0"; */
+"P43-YO-6S0.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PuX-px-fq4"; */
+"PuX-px-fq4.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SoF-nA-NVN"; */
+"SoF-nA-NVN.text" = "Label";
+
+/* Class = "UILabel"; text = "ランダムOFF"; ObjectID = "Tva-Ji-jEX"; */
+"Tva-Ji-jEX.text" = "ランダムOFF";
+
+/* Class = "UILabel"; text = "英単語"; ObjectID = "UY8-mE-mGD"; */
+"UY8-mE-mGD.text" = "英単語";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VJW-f6-KSH"; */
+"VJW-f6-KSH.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "自分リストに追加　＞"; ObjectID = "WJ9-32-tCs"; */
+"WJ9-32-tCs.normalTitle" = "自分リストに追加　＞";
+
+/* Class = "UIButton"; normalTitle = "意味"; ObjectID = "YX6-9M-Jnl"; */
+"YX6-9M-Jnl.normalTitle" = "意味";
+
+/* Class = "UIBarButtonItem"; title = "テスト"; ObjectID = "ZLN-7k-w3M"; */
+"ZLN-7k-w3M.title" = "テスト";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Zae-QD-30v"; */
+"Zae-QD-30v.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "e7J-jO-LCs"; */
+"e7J-jO-LCs.text" = "Label";
+
+/* Class = "UILabel"; text = "PraeParet"; ObjectID = "ifI-pv-L44"; */
+"ifI-pv-L44.text" = "PraeParet";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jqV-0M-4H8"; */
+"jqV-0M-4H8.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "カテゴリー選択"; ObjectID = "kAr-gl-nv4"; */
+"kAr-gl-nv4.placeholder" = "カテゴリー選択";
+
+/* Class = "UIButton"; normalTitle = "自分リストに追加>"; ObjectID = "lGi-ci-cX2"; */
+"lGi-ci-cX2.normalTitle" = "自分リストに追加>";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "maf-mI-c3b"; */
+"maf-mI-c3b.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mzY-Zc-VkD"; */
+"mzY-Zc-VkD.text" = "Label";
+
+/* Class = "UILabel"; text = "意味"; ObjectID = "pnm-o7-Qdj"; */
+"pnm-o7-Qdj.text" = "意味";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qLf-p4-DVd"; */
+"qLf-p4-DVd.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "r2j-h3-bFD"; */
+"r2j-h3-bFD.title" = "戻る";
+
+/* Class = "UILabel"; text = "英単語"; ObjectID = "rmO-cD-hmY"; */
+"rmO-cD-hmY.text" = "英単語";
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "sYu-cn-YBQ"; */
+"sYu-cn-YBQ.title" = "戻る";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tPA-Rh-DSV"; */
+"tPA-Rh-DSV.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "カテゴリー選択"; ObjectID = "uAZ-Q1-5aN"; */
+"uAZ-Q1-5aN.placeholder" = "カテゴリー選択";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "vaj-JN-dh3"; */
+"vaj-JN-dh3.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "zQD-9v-TCI"; */
+"zQD-9v-TCI.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zeh-tL-2mg"; */
+"zeh-tL-2mg.text" = "Label";
